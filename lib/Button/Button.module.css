@@ -80,33 +80,33 @@
 }
 
 .secondary {
-  --btn-color: var(--secondary-color);
-  --btn-color-rgb: var(--secondary-color-rgb);
-  --btn-color-contrast: var(--secondary-color-contrast);
+  --btn-color: var(--secondary-color, #05c77d);
+  --btn-color-rgb: var(--secondary-color-rgb, 5, 199, 125);
+  --btn-color-contrast: var(--secondary-color-contrast, #ffffff);
 }
 
 .warning {
-  --btn-color: var(--warning-color);
-  --btn-color-rgb: var(--warning-color-rgb);
-  --btn-color-contrast: var(--warning-color-contrast);
+  --btn-color: var(--warning-color, #f0b000);
+  --btn-color-rgb: var(--warning-color-rgb, 240, 176, 0);
+  --btn-color-contrast: var(--warning-color-contrast, #ffffff);
 }
 
 .danger {
-  --btn-color: var(--danger-color);
-  --btn-color-rgb: var(--danger-color-rgb);
-  --btn-color-contrast: var(--danger-color-contrast);
+  --btn-color: var(--danger-color, #f01010);
+  --btn-color-rgb: var(--danger-color-rgb, 240, 16, 16);
+  --btn-color-contrast: var(--danger-color-contrast, #ffffff);
 }
 
 .black {
-  --btn-color: var(--color-black);
-  --btn-color-rgb: var(--color-black-rgb);
-  --btn-color-contrast: var(--color-black-contrast);
+  --btn-color: var(--color-black, #303030);
+  --btn-color-rgb: var(--color-black-rgb, 48, 48, 48);
+  --btn-color-contrast: var(--color-black-contrast, #ffffff);
 }
 
 .white {
-  --btn-color: var(--color-white);
-  --btn-color-rgb: var(--color-white-rgb);
-  --btn-color-contrast: var(--color-white-contrast);
+  --btn-color: var(--color-white, #ffffff);
+  --btn-color-rgb: var(--color-white-rgb, 255, 255, 255);
+  --btn-color-contrast: var(--color-white-contrast, #303030);
 }
 
 /* Animations */

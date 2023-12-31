@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  border: 1px solid #606060;
+  border-radius: 0.5rem;
+}
+
+.root > * {
+  background-color: rgba(200, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.root > :first-child {
+}
+
+.root pre {
+  flex-grow: 1;
+  margin: 0 !important;
+}

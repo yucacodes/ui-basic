@@ -6,12 +6,12 @@
   font-size: var(--btn-font-size, 1rem);
   padding: var(--btn-padding, 0.5em 1em);
   transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: var(--btn-border-radius, 0.5em);
   display: flex;
   align-items: center;
 }
 
 .contained, .outlined {
-  border-radius: var(--btn-border-radius, 0.5em);
   box-shadow: .0em .1em 0.3em .0em var(--shadow-color, rgba(0,0,0,0.4));
   min-height: var(--btn-min-height);
   min-width: var(--btn-min-width);
@@ -22,7 +22,6 @@
   outline: none;
   color: var(--btn-color);
   background: none;
-  border-radius: var(--btn-border-radius);
 }
 
 .text:hover {

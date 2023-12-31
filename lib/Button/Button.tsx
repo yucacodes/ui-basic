@@ -25,6 +25,7 @@ export interface ButtonProps extends ColorFlags, ButtonVariantFlags {
   disabled?: boolean
   className?: string
   loading?: boolean
+  size?: number
   onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
@@ -43,7 +44,7 @@ export const Button = ({
     <button
       type={props.type}
       disabled={props.disabled}
-      style={{ ...colorVariables }}
+      style={{ ...colorVariables, fontSize: props.size }}
       className={classNames(
         className,
         styles['button'],

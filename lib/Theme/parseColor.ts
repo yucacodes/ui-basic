@@ -11,7 +11,7 @@ function parseHexColor(hexColor: string): RGBColor {
     r: parseInt(hexR, 16),
     g: parseInt(hexG, 16),
     b: parseInt(hexB, 16),
-    a: hexA ? parseInt(hexR, 16) / 255.0 : undefined,
+    a: hexA ? parseInt(hexA, 16) / 255.0 : undefined,
   }
 }
 

@@ -9,7 +9,13 @@ function App() {
     <>
       <h1>Count</h1>
       <p>{count}</p>
-      <Button onClick={() => setCount((count) => count + 1)}>Press</Button>
+      <Button
+        contained
+        primary
+        onClick={() => setCount((count) => count + 1)}
+      >
+        Press
+      </Button>
     </>
   )
 }

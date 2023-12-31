@@ -1,13 +1,16 @@
 import { CodeViewer } from '../../components/CodeViewer/CodeViewer'
 
-import ButtonVariantExampleNode from './Button.variant.example'
-import ButtonVariantExampleCode from './Button.variant.example.tsx?raw'
+import variantExampleNode from './Button.variant.example'
+import variantExampleCode from './Button.variant.example.tsx?raw'
 
-import ButtonThemeColorExampleNode from './Button.themeColor.example'
-import ButtonThemeColorExampleCode from './Button.themeColor.example.tsx?raw'
+import themeColorExampleNode from './Button.themeColor.example'
+import themeColorExampleCode from './Button.themeColor.example.tsx?raw'
 
-import ButtonCustomColorExampleNode from './Button.customColor.example'
-import ButtonCustomColorExampleCode from './Button.customColor.example.tsx?raw'
+import customColorExampleNode from './Button.customColor.example'
+import customColorExampleCode from './Button.customColor.example.tsx?raw'
+
+import controlsExampleNode from './Button.controls.example'
+import controlsExampleCode from './Button.controls.example.tsx?raw'
 
 export function ButtonDocs() {
   return (
@@ -17,8 +20,8 @@ export function ButtonDocs() {
         <p>The Button comes with three variants</p>
         <figure>
           <CodeViewer
-            code={ButtonVariantExampleCode}
-            node={ButtonVariantExampleNode}
+            code={variantExampleCode}
+            node={variantExampleNode}
           />
         </figure>
       </article>
@@ -28,8 +31,8 @@ export function ButtonDocs() {
         <p>The Button comes with seven options of theme defined colors</p>
         <figure>
           <CodeViewer
-            code={ButtonThemeColorExampleCode}
-            node={ButtonThemeColorExampleNode}
+            code={themeColorExampleCode}
+            node={themeColorExampleNode}
           />
         </figure>
       </article>
@@ -43,8 +46,21 @@ export function ButtonDocs() {
         </p>
         <figure>
           <CodeViewer
-            code={ButtonCustomColorExampleCode}
-            node={ButtonCustomColorExampleNode}
+            code={customColorExampleCode}
+            node={customColorExampleNode}
+          />
+        </figure>
+      </article>
+      <br />
+      <article>
+        <h1>Controls</h1>
+        <p>
+          Controll the behavior of Button on various situations.
+        </p>
+        <figure>
+          <CodeViewer
+            code={controlsExampleCode}
+            node={controlsExampleNode}
           />
         </figure>
       </article>

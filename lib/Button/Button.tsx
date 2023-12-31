@@ -46,6 +46,7 @@ export const Button = ({
       style={{ ...colorVariables }}
       className={classNames(
         className,
+        styles['button'],
         styles[themeColor ?? 'primary'],
         styles[variant ?? 'contained'],
         loading && styles['loading'],

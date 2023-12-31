@@ -14,7 +14,6 @@ export default ( // __HIDE__
   <Button outlined size={32}>
     Size 32
   </Button>
-
 </>
 </div> // __HIDE__
 ) // __HIDE__

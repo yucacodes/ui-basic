@@ -1,4 +1,3 @@
-import { Page } from '../components'
 import ButtonDocs from '../docs/ButtonDocs'
 
 // import { useLoaderData } from "react-router-dom";
@@ -11,11 +10,7 @@ export async function loader() {
 export function Component() {
   // let data = useLoaderData() as string;
 
-  return (
-    <Page>
-      <ButtonDocs />
-    </Page>
-  )
+  return <ButtonDocs />
 }
 
-Component.displayName = "AboutPage";
+Component.displayName = 'Button'

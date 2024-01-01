@@ -1,9 +1,9 @@
 .root {
   display: flex;
+  flex-direction: column;
   align-items: stretch;
   justify-content: center;
   border: 1px solid #606060;
-  border-radius: 0.5rem;
 }
 
 .root > * {
@@ -14,10 +14,17 @@
   flex-grow: 1;
 }
 
-.root > :first-child {
+.root > :last-child {
+  padding: 1rem;
 }
 
 .root pre {
   flex-grow: 1;
   margin: 0 !important;
+}
+
+@media (min-width: 800px) {
+  .root {
+    flex-direction: row;
+  }
 }

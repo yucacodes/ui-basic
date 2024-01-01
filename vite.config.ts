@@ -16,6 +16,19 @@ const docsConfig = defineConfig({
       },
     ],
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: (moduleId) => {
+          if (
+            moduleId.includes('node_modules') &&
+            moduleId.includes('react-syntax-highlighter')
+          )
+            return 'react-syntax-highlighter'
+        },
+      },
+    },
+  },
 })
 
 const libConfig = defineConfig({
@@ -44,6 +57,4 @@ const libConfig = defineConfig({
   },
 })
 
-export default process.env.VITE_BUILD_MODE === 'lib'
-  ? libConfig
-  : docsConfig
+export default process.env.VITE_BUILD_MODE === 'lib' ? libConfig : docsConfig

@@ -17,17 +17,27 @@ import sizeExampleCode from './Button.size.example.tsx?raw'
 
 export function ButtonDocs() {
   return (
-    <div>
-      <article>
-        <h1>Variants</h1>
-        <p>The Button comes with three variants</p>
+    <article>
+      <header>
+        <h1>Button</h1>
+        <p>
+          Full reusable and deep customizable (With CSS variables) Button
+          component.
+          <br /> <br />
+          Require zero initial configuration, but is easily integrable with an
+          app theme.
+        </p>
+      </header>
+      <section>
+        <h2>Variants</h2>
+        <p>The Button comes have three variants</p>
         <figure>
           <CodeViewer code={variantExampleCode} node={variantExampleNode} />
         </figure>
-      </article>
+      </section>
       <br />
-      <article>
-        <h1>Theme colors</h1>
+      <section>
+        <h2>Theme colors</h2>
         <p>The Button comes with seven options of theme defined colors</p>
         <figure>
           <CodeViewer
@@ -35,14 +45,13 @@ export function ButtonDocs() {
             node={themeColorExampleNode}
           />
         </figure>
-      </article>
+      </section>
       <br />
-      <article>
-        <h1>Custom colors</h1>
+      <section>
+        <h2>Custom colors</h2>
         <p>
-          The button comes with the option to set a custom color, works with
-          hexadecimal format or with an RGB object. The contrast color is set
-          automatically.
+          Custom color works with hexadecimal format or with an RGB object. The
+          contrast color is set automatically.
         </p>
         <figure>
           <CodeViewer
@@ -50,25 +59,28 @@ export function ButtonDocs() {
             node={customColorExampleNode}
           />
         </figure>
-      </article>
+      </section>
       <br />
-      <article>
-        <h1>Controls</h1>
-        <p>Controll the behavior of Button on various situations.</p>
+      <section>
+        <h2>Controls</h2>
+        <p>
+          Controll the behavior of Button on various situations like disabled or
+          loading.
+        </p>
         <figure>
           <CodeViewer code={controlsExampleCode} node={controlsExampleNode} />
         </figure>
-      </article>
+      </section>
       <br />
-      <article>
-        <h1>Size</h1>
+      <section>
+        <h2>Size</h2>
         <p>
           Controll the size of the button, default size is equals to font-size
         </p>
         <figure>
           <CodeViewer code={sizeExampleCode} node={sizeExampleNode} />
         </figure>
-      </article>
-    </div>
+      </section>
+    </article>
   )
 }

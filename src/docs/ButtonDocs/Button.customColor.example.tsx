@@ -15,7 +15,10 @@ export default ( // __HIDE__
     Custom
   </Button>
 
-  <Button outlined color={{r: 10, g: 23, b: 200}}>
+  <Button 
+    outlined 
+    color={{r: 10, g: 23, b: 200}}
+  >
     Custom
   </Button>
 </>

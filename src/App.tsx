@@ -1,14 +1,20 @@
 import './App.css'
-
+import '@fontsource/ibm-plex-sans'
+import '@fontsource/lato'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { PageLayout } from './components/PageLayout'
 
 // const Layout = React.lazy(() => import('./Layout'))
 
 const router = createBrowserRouter([
   {
     path: '/',
-    // element: <Layout />,
+    element: <PageLayout />,
     children: [
+      {
+        index: true,
+        lazy: () => import('./pages/HomePage'),
+      },
       {
         path: 'button',
         lazy: () => import('./pages/ButtonPage'),

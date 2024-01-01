@@ -1,11 +1,10 @@
 import classNames from 'classnames'
 import { ReactNode } from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
-import { vs2015, a11yDark, dracula } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import styles from './CodeViewer.module.css'
 
 export function prepareCode(src: string): string {
-  src = src.replaceAll('@lib', '@yucacodes/ui')
   return src
     .split('\n')
     .filter((x) => !x.includes('__HIDE__'))

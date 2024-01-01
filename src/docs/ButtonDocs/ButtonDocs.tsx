@@ -17,7 +17,7 @@ import sizeExampleCode from './Button.size.example.tsx?raw'
 
 export function ButtonDocs() {
   return (
-    <>
+    <div>
       <article>
         <h1>Variants</h1>
         <p>The Button comes with three variants</p>
@@ -69,6 +69,6 @@ export function ButtonDocs() {
           <CodeViewer code={sizeExampleCode} node={sizeExampleNode} />
         </figure>
       </article>
-    </>
+    </div>
   )
 }

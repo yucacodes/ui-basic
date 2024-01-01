@@ -1,15 +1,22 @@
-import './App.module.css'
-import { ButtonDocs } from './docs/ButtonDocs/ButtonDocs'
-import styles from './App.module.css'
+import './App.css'
 
-function App() {
-  return (
-    <div className={styles.root}>
-      <main>
-        <ButtonDocs />
-      </main>
-    </div>
-  )
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+
+// const Layout = React.lazy(() => import('./Layout'))
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    // element: <Layout />,
+    children: [
+      {
+        path: 'button',
+        lazy: () => import('./pages/ButtonPage'),
+      },
+    ],
+  },
+])
+
+export default function App() {
+  return <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
 }
-
-export default App

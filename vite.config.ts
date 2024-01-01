@@ -6,16 +6,20 @@ import { extname, relative } from 'path'
 import { fileURLToPath } from 'node:url'
 import { glob } from 'glob'
 
-export default defineConfig({
-  plugins: [react(), libInjectCss(), dts({ include: ['lib'] })],
+const docsConfig = defineConfig({
+  plugins: [react()],
   resolve: {
     alias: [
       {
         find: '@lib',
-        replacement: fileURLToPath(new URL('.', import.meta.url)),
+        replacement: fileURLToPath(new URL('./lib/main', import.meta.url)),
       },
     ],
   },
+})
+
+const libConfig = defineConfig({
+  plugins: [react(), libInjectCss(), dts({ include: ['lib'] })],
   build: {
     copyPublicDir: false,
     lib: {
@@ -39,3 +43,7 @@ export default defineConfig({
     },
   },
 })
+
+export default process.env.VITE_BUILD_MODE === 'lib'
+  ? libConfig
+  : docsConfig

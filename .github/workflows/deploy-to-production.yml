@@ -19,7 +19,7 @@ jobs:
   build:
     needs: versions
     runs-on: ubuntu-latest
-    if: jobs.versions.outputs.publised != jobs.versions.outputs.package
+    if:  ${{ jobs.versions.outputs.publised }} != ${{ jobs.versions.outputs.package }}
     steps:
     - name: Docker Login
       uses: docker/login-action@v3.0.0

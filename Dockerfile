@@ -28,4 +28,4 @@ FROM node:slim as publish-lib
 COPY --from=build-lib /app/package.json /app/package.json
 COPY --from=build-lib /app/dist /app/dist
 WORKDIR app
-CMD ["npm", "run", "login-publish" ]
+CMD ["npm", "run", "npm-publish" ]

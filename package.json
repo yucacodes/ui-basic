@@ -19,7 +19,7 @@
     "dev": "vite",
     "build:docs": "tsc --p ./tsconfig.json  && vite build",
     "build:lib": "tsc --p ./tsconfig.lib.json  && VITE_BUILD_MODE=lib vite build",
-    "login-publish": "npm set \"//registry.npmjs.org/:_authToken=$NPM_TOKEN\" && npm publish"
+    "npm-publish": "npm set \"//registry.npmjs.org/:_authToken=$NPM_TOKEN\" && npm publish"
   },
   "peerDependencies": {
     "react": ">=16.0.0",

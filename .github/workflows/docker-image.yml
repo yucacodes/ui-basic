@@ -1,0 +1,8 @@
+name: Test Raw commands
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - run: docker build . --file Dockerfile --tag publish-lib  --target=publish-lib 
+    - run: docker run publish-lib

@@ -1,0 +1,12 @@
+name: Test Raw commands
+on: 
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4.1.1
+    - run: ls -la
+    - run: docker build . --file Dockerfile --tag publish-lib --target=publish-lib 
+    - run: docker run publish-lib

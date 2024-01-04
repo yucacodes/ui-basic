@@ -50,7 +50,7 @@ jobs:
       - name: Docker Login
         uses: docker/login-action@v3.0.0
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          username: yucacodes
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - id: image
@@ -59,7 +59,7 @@ jobs:
           REPOSITORY=yucacodes/ui-front
           TAG=${{ github.sha }}
           IMAGE=$REPOSITORY:$TAG
-          
+
           echo "repository=$REPOSITORY" >> "$GITHUB_OUTPUT"
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           echo "image=$IMAGE" >> "$GITHUB_OUTPUT"

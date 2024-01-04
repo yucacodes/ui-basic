@@ -1,31 +1,14 @@
 import classNames from 'classnames'
 import type { MouseEventHandler, ReactNode } from 'react'
-import { ColorFlags, colorFlagsOptions } from '../Theme/ColorFlags'
-import { CustomColor } from '../Theme/CustomColor'
-import { selectedFlag } from '../Theme/selectedFlag'
+import { colorFlagsOptions } from '../Theme/ColorFlags'
 import { customColorVariables } from '../Theme/customColorVariables'
+import { selectedFlag } from '../Theme/selectedFlag'
+import { CButtonProps, buttonVariantFlagsOptions } from './Button.common'
 import styles from './Button.module.css'
 
-export const buttonVariantFlagsOptions = [
-  'text',
-  'contained',
-  'outlined',
-] as const
-
-export interface ButtonVariantFlags {
-  text?: boolean
-  contained?: boolean
-  outlined?: boolean
-}
-
-export interface ButtonProps extends ColorFlags, ButtonVariantFlags {
+export interface ButtonProps extends CButtonProps {
   children?: ReactNode
-  color?: CustomColor
-  type?: 'submit' | 'button'
-  disabled?: boolean
   className?: string
-  loading?: boolean
-  size?: number
   onClick?: MouseEventHandler<HTMLButtonElement>
 }
 

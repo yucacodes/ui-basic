@@ -5,6 +5,7 @@ import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import { extname, relative } from 'path'
 import { fileURLToPath } from 'node:url'
 import { glob } from 'glob'
+import { qwikVite } from '@builder.io/qwik/optimizer'
 
 const docsConfig = defineConfig({
   plugins: [react()],
@@ -36,14 +37,16 @@ const libConfig = defineConfig({
   build: {
     copyPublicDir: false,
     lib: {
-      entry: './lib/main.ts',
+      entry: './lib/main.react.ts',
       formats: ['es'],
     },
     rollupOptions: {
       external: ['react', 'react/jsx-runtime'],
       input: Object.fromEntries(
         glob
-          .sync('lib/**/*.{ts,tsx}', { ignore: 'lib/vite-env.d.ts' })
+          .sync('lib/**/*.{ts,tsx}', {
+            ignore: ['lib/vite-env.d.ts', 'lib/**/*.{qwik.ts,qwik.tsx}'],
+          })
           .map((file) => [
             relative('lib', file.slice(0, file.length - extname(file).length)),
             fileURLToPath(new URL(file, import.meta.url)),
@@ -57,4 +60,27 @@ const libConfig = defineConfig({
   },
 })
 
-export default process.env.VITE_BUILD_MODE === 'lib' ? libConfig : docsConfig
+const libQwikConfig = defineConfig({
+  build: {
+    target: 'es2020',
+    lib: {
+      entry: './lib/main.qwik.ts',
+      formats: ['es', 'cjs'],
+      fileName: (format) => `index.qwik.${format === 'es' ? 'mjs' : 'cjs'}`,
+    },
+  },
+  plugins: [qwikVite()],
+})
+
+const exportConfig = (() => {
+  switch (process.env.VITE_BUILD_MODE) {
+    case 'lib':
+      return libConfig
+    case 'lib-qwik':
+      return libQwikConfig
+    default:
+      return docsConfig
+  }
+})()
+
+export default exportConfig

@@ -1,0 +1,18 @@
+{
+  "name": "@yucacodes/ui-qwik",
+  "version": "0.0.0",
+  "main": "./dist/index.qwik.mjs",
+  "qwik": "./dist/index.qwik.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.qwik.mjs",
+      "require": "./dist/index.qwik.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module"
+}

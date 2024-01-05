@@ -1,5 +1,6 @@
 {
   "name": "@yucacodes/ui-react",
+  "private": false,
   "type": "module",
   "files": ["dist"],
   "main": "./dist/main.js",

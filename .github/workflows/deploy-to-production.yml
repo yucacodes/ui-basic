@@ -24,8 +24,8 @@ jobs:
           echo "published=$PUBLISHED_VERSION" >> "$GITHUB_OUTPUT"
           echo "package=$PACKAGE_VERSION" >> "$GITHUB_OUTPUT"
 
-  publish-lib:
-    name: Publish NPM Package
+  publish-react-lib:
+    name: Publish React Lib
     needs: check-versions
     runs-on: ubuntu-latest
     if: ${{ needs.check-versions.outputs.published != needs.check-versions.outputs.package }}
@@ -35,12 +35,13 @@ jobs:
 
       - name: Run publish
         run: |
+          
           docker build . --file Dockerfile --tag publish-lib --target=publish-lib
           docker run -e NPM_TOKEN=${{ secrets.NPM_TOKEN }} publish-lib
 
   build-docs:
     name: Build Docs App
-    needs: publish-lib
+    needs: publish-react-lib
     runs-on: ubuntu-latest
     outputs:
       repository: ${{ steps.image.outputs.repository }}

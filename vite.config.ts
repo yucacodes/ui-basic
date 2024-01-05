@@ -13,7 +13,7 @@ const docsConfig = defineConfig({
     alias: [
       {
         find: '@lib',
-        replacement: fileURLToPath(new URL('./lib/main', import.meta.url)),
+        replacement: fileURLToPath(new URL('./lib/main.react', import.meta.url)),
       },
     ],
   },

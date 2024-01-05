@@ -1,5 +1,6 @@
 {
   "name": "@yucacodes/ui-qwik",
+  "private": false,
   "type": "module",
   "files": ["dist"],
   "main": "./dist/main.qwik.mjs",

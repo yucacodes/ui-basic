@@ -79,6 +79,7 @@ const libQwikConfig = defineConfig({
   },
   plugins: [
     qwikVite(),
+    libInjectCss(),
     dts({
       include: ['lib'],
       exclude: ['lib/**/*.{react.ts,react.tsx}', 'lib/vite-env.d.ts'],

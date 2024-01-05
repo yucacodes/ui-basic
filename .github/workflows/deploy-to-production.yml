@@ -82,9 +82,6 @@ jobs:
 
   build-docs:
     name: Build Docs App
-    needs: 
-      - publish-react-lib
-      - publish-qwik-lib
     runs-on: ubuntu-latest
     outputs:
       repository: ${{ steps.image.outputs.repository }}

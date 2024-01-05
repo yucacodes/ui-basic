@@ -28,6 +28,7 @@ export const Button = ({
       type={props.type}
       disabled={props.disabled}
       style={{ ...colorVariables, fontSize: props.size }}
+      onClick={props.onClick}
       className={classNames(
         className,
         styles['button'],

@@ -24,6 +24,34 @@ jobs:
           echo "published=$PUBLISHED_VERSION" >> "$GITHUB_OUTPUT"
           echo "package=$PACKAGE_VERSION" >> "$GITHUB_OUTPUT"
 
+  publish-qwik-lib:
+    name: Publish Qwik Lib
+    needs: check-versions
+    runs-on: ubuntu-latest
+    if: ${{ needs.check-versions.outputs.published != needs.check-versions.outputs.package }}
+    steps:
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+
+      - name: Run publish
+        run: |
+          VERSION_TO_PUBLISH=${{ needs.check-versions.outputs.package }}
+          NPM_TOKEN=${{ secrets.NPM_TOKEN }}
+
+          bun install
+          bun run build:lib.qwik
+
+          cat package.qwik.json \
+            | jq ". += {\"version\": \"$VERSION_TO_PUBLISH\"}" \
+            > package.json
+
+          npm set "//registry.npmjs.org/:_authToken=$NPM_TOKEN"
+          npm publish --access=public
+
   publish-react-lib:
     name: Publish React Lib
     needs: check-versions
@@ -44,17 +72,19 @@ jobs:
 
           bun install
           bun run build:lib.react
-          
+
           cat package.react.json \
             | jq ". += {\"version\": \"$VERSION_TO_PUBLISH\"}" \
             > package.json
-          
+
           npm set "//registry.npmjs.org/:_authToken=$NPM_TOKEN"
           npm publish --access=public
 
   build-docs:
     name: Build Docs App
-    needs: publish-react-lib
+    needs: 
+      - publish-react-lib
+      - publish-qwik-lib
     runs-on: ubuntu-latest
     outputs:
       repository: ${{ steps.image.outputs.repository }}

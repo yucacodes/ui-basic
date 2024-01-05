@@ -1,5 +1,5 @@
 {
-  "name": "@yucacodes/ui",
+  "name": "@yucacodes/ui-react",
   "private": false,
   "type": "module",
   "files": ["dist"],

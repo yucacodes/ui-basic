@@ -1,7 +1,6 @@
 /** @jsxImportSource @builder.io/qwik */
 
-import { ClassList, PropFunction, component$ } from '@builder.io/qwik'
-import { JSXNode } from '@builder.io/qwik/jsx-runtime'
+import { ClassList, PropFunction, Slot, component$ } from '@builder.io/qwik'
 import { colorFlagsOptions } from '../Theme/ColorFlags'
 import { customColorVariables } from '../Theme/customColorVariables'
 import { selectedFlag } from '../Theme/selectedFlag'
@@ -9,7 +8,6 @@ import { CButtonProps, buttonVariantFlagsOptions } from './Button.common'
 import styles from './Button.module.css'
 
 export interface ButtonProps extends CButtonProps {
-  children?: JSXNode
   class?: ClassList
   onClick$?: PropFunction<
     (event: PointerEvent, element: HTMLButtonElement) => any
@@ -17,7 +15,7 @@ export interface ButtonProps extends CButtonProps {
 }
 
 export const Button = component$(
-  ({ children, color, loading, ...props }: ButtonProps) => {
+  ({ color, loading, ...props }: ButtonProps) => {
     const variant = selectedFlag(props, buttonVariantFlagsOptions)
     const themeColor = selectedFlag(props, colorFlagsOptions)
     const colorVariables = customColorVariables('btn', color)
@@ -36,7 +34,7 @@ export const Button = component$(
           loading && styles['loading'],
         ]}
       >
-        {children ?? 'Button'}
+        <Slot></Slot>
       </button>
     )
   },

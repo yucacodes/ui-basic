@@ -37,7 +37,7 @@ export const Button = ({
         loading && styles['loading'],
       )}
     >
-      {children ?? 'Button'}
+      {children}
     </button>
   )
 }

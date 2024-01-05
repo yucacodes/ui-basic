@@ -30,14 +30,26 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ needs.check-versions.outputs.published != needs.check-versions.outputs.package }}
     steps:
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
       - name: Checkout
         uses: actions/checkout@v4.1.1
 
       - name: Run publish
         run: |
+          VERSION_TO_PUBLISH=${{ needs.check-versions.outputs.package }}
+          NPM_TOKEN=${{ secrets.NPM_TOKEN }}
+
+          bun run build:lib.react
           
-          docker build . --file Dockerfile --tag publish-lib --target=publish-lib
-          docker run -e NPM_TOKEN=${{ secrets.NPM_TOKEN }} publish-lib
+          cat package.react.json \
+            | jq ". += {\"version\": \"$VERSION_TO_PUBLISH\"}" \
+            > package.json
+          
+          npm set \"//registry.npmjs.org/:_authToken=$NPM_TOKEN\"
+          npm publish --access=public
 
   build-docs:
     name: Build Docs App
@@ -104,4 +116,3 @@ jobs:
             for C in $CONTAINERS_TO_STOP; do docker kill $C; done;
             for C in $CONTAINERS_TO_STOP; do docker rm $C; done;
             docker image prune --all --force
-

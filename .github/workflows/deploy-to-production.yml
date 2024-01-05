@@ -7,7 +7,8 @@ jobs:
     name: Check Versions
     runs-on: ubuntu-latest
     outputs:
-      published: ${{ steps.versions.outputs.published }}
+      react-published: ${{ steps.versions.outputs.reactpublished }}
+      qwik-published: ${{ steps.versions.outputs.qwikpublished }}
       package: ${{ steps.versions.outputs.package }}
     steps:
       - uses: actions/setup-node@v4
@@ -17,18 +18,22 @@ jobs:
       - id: versions
         name: Query versions
         run: |
-          PUBLISHED_VERSION=$(npm view @yucacodes/ui version)
+          REACT_PUBLISHED_VERSION=$(npm view @yucacodes/ui-react version)
+          QWIK_PUBLISHED_VERSION=$(npm view @yucacodes/ui-qwik version)
           PACKAGE_VERSION=$(cat package.json | jq -r '.version')
+          
           echo "PUBLISHED_VERSION=$PUBLISHED_VERSION"
           echo "PACKAGE_VERSION=$PACKAGE_VERSION"
-          echo "published=$PUBLISHED_VERSION" >> "$GITHUB_OUTPUT"
+          
+          echo "reactpublished=$REACT_PUBLISHED_VERSION" >> "$GITHUB_OUTPUT"
+          echo "qwikpublished=$QWIK_PUBLISHED_VERSION" >> "$GITHUB_OUTPUT"
           echo "package=$PACKAGE_VERSION" >> "$GITHUB_OUTPUT"
 
   publish-qwik-lib:
     name: Publish Qwik Lib
     needs: check-versions
     runs-on: ubuntu-latest
-    if: ${{ needs.check-versions.outputs.published != needs.check-versions.outputs.package }}
+    if: ${{ needs.check-versions.outputs.qwik-published != needs.check-versions.outputs.package }}
     steps:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
@@ -56,7 +61,7 @@ jobs:
     name: Publish React Lib
     needs: check-versions
     runs-on: ubuntu-latest
-    if: ${{ needs.check-versions.outputs.published != needs.check-versions.outputs.package }}
+    if: ${{ needs.check-versions.outputs.react-published != needs.check-versions.outputs.package }}
     steps:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1

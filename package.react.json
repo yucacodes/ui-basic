@@ -1,19 +1,21 @@
 {
-  "name": "@yucacodes/ui-qwik",
+  "name": "@yucacodes/ui-react",
   "type": "module",
   "files": ["dist"],
-  "main": "./dist/main.qwik.mjs",
-  "qwik": "./dist/main.qwik.mjs",
+  "main": "./dist/main.js",
   "types": "./dist/main.d.ts",
   "exports": {
     ".": {
       "types": "./dist/main.d.ts",
-      "import": "./dist/main.qwik.mjs",
-      "require": "./dist/main.qwik.cjs"
+      "import": "./dist/main.js"
     }
   },
   "sideEffects": ["**/*.css"],
   "scripts": {
     "npm-publish": "npm set \"//registry.npmjs.org/:_authToken=$NPM_TOKEN\" && npm publish"
+  },
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
   }
 }

@@ -32,8 +32,7 @@ const docsConfig = defineConfig({
   },
 })
 
-const libConfig = defineConfig({
-  plugins: [react(), libInjectCss(), dts({ include: ['lib'] })],
+const reactLibConfig = defineConfig({
   build: {
     copyPublicDir: false,
     lib: {
@@ -45,7 +44,7 @@ const libConfig = defineConfig({
       input: Object.fromEntries(
         glob
           .sync('lib/**/*.{ts,tsx}', {
-            ignore: ['lib/vite-env.d.ts', 'lib/**/*.{qwik.ts,qwik.tsx}'],
+            ignore: ['lib/**/*.{qwik.ts,qwik.tsx}', 'lib/vite-env.d.ts'],
           })
           .map((file) => [
             relative('lib', file.slice(0, file.length - extname(file).length)),
@@ -58,6 +57,14 @@ const libConfig = defineConfig({
       },
     },
   },
+  plugins: [
+    react(),
+    libInjectCss(),
+    dts({
+      include: ['lib'],
+      exclude: ['lib/**/*.{qwik.ts,qwik.tsx}', 'lib/vite-env.d.ts'],
+    }),
+  ],
 })
 
 const libQwikConfig = defineConfig({
@@ -66,16 +73,24 @@ const libQwikConfig = defineConfig({
     lib: {
       entry: './lib/main.qwik.ts',
       formats: ['es', 'cjs'],
-      fileName: (format) => `index.qwik.${format === 'es' ? 'mjs' : 'cjs'}`,
+      fileName: (format) => `main.qwik.${format === 'es' ? 'mjs' : 'cjs'}`,
     },
+    outDir: './dist',
   },
-  plugins: [qwikVite()],
+  plugins: [
+    qwikVite(),
+    dts({
+      include: ['lib'],
+      exclude: ['lib/**/*.{react.ts,react.tsx}', 'lib/vite-env.d.ts'],
+      rollupTypes: true,
+    }),
+  ],
 })
 
 const exportConfig = (() => {
   switch (process.env.VITE_BUILD_MODE) {
-    case 'lib':
-      return libConfig
+    case 'lib-react':
+      return reactLibConfig
     case 'lib-qwik':
       return libQwikConfig
     default:

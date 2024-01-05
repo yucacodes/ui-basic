@@ -3,12 +3,12 @@
   "private": false,
   "type": "module",
   "files": ["dist"],
-  "main": "./dist/main.js",
-  "types": "./dist/main.d.ts",
+  "main": "./dist/main.react.js",
+  "types": "./dist/main.react.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/main.d.ts",
-      "import": "./dist/main.js"
+      "types": "./dist/main.react.d.ts",
+      "import": "./dist/main.react.js"
     }
   },
   "sideEffects": ["**/*.css"],

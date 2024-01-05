@@ -13,8 +13,5 @@
       "require": "./dist/main.qwik.cjs"
     }
   },
-  "sideEffects": ["**/*.css"],
-  "scripts": {
-    "npm-publish": "npm set \"//registry.npmjs.org/:_authToken=$NPM_TOKEN\" && npm publish"
-  }
+  "sideEffects": ["**/*.css"]
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@yucacodes/ui-react",
+  "name": "@yucacodes/ui",
   "private": false,
   "type": "module",
   "files": ["dist"],
@@ -12,9 +12,6 @@
     }
   },
   "sideEffects": ["**/*.css"],
-  "scripts": {
-    "npm-publish": "npm set \"//registry.npmjs.org/:_authToken=$NPM_TOKEN\" && npm publish"
-  },
   "peerDependencies": {
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0"

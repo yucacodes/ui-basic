@@ -144,8 +144,8 @@
   display: block;
   background: var(--btn-ripple-color);
   opacity: 0.1;
-  width: 0.2rem;
-  height: 0.2rem;
+  width: 0.2em;
+  height: 0.2em;
   position: absolute;
   border-radius: 50%;
   animation: clickripple 1250ms ease-out forwards,

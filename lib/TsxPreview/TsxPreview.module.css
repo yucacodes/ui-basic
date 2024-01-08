@@ -1,0 +1,29 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  border: 1px solid #606060;
+  background-color: rgba(200, 255, 255, 0.1);
+}
+
+.tsxhl {
+  flex-grow: 1;
+}
+
+.preview {
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.tsxhl, .preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  .root {
+    flex-direction: row;
+  }
+}

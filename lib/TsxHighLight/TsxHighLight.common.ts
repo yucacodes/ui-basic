@@ -4,3 +4,7 @@ export function preprocessCode(code: string): string {
     .filter((line) => !line.includes('__HIDE__'))
     .join('\n')
 }
+
+export interface CTsxHighLightProps {
+  code: string
+}

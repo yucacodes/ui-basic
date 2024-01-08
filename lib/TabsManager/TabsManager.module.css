@@ -1,0 +1,15 @@
+.tab {
+  cursor: pointer;
+}
+
+.tab.selected {
+  color: green;
+}
+
+.tabPanel {
+  display: none;
+}
+
+.tabPanel.selected {
+  display: block;
+}

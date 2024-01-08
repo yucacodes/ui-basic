@@ -1,4 +1,4 @@
-import { TsxPreview } from '@lib'
+import { Tab, TabList, TabPanel, TabsManager, TsxPreview } from '@lib'
 
 import variantExampleNode from './Button.variant.example'
 import variantExampleCode from './Button.variant.example.tsx?raw'
@@ -29,6 +29,21 @@ export const ButtonDocs = component$(() => {
           app theme.
         </p>
       </header>
+      <section>
+        <TabsManager selected={1}>
+          <TabList>
+            <Tab> One </Tab>
+            <Tab> Two </Tab>
+            <Tab> Three </Tab>
+            <Tab> Four </Tab>
+          </TabList>
+
+          <TabPanel>1</TabPanel>
+          <TabPanel>2</TabPanel>
+          <TabPanel>3</TabPanel>
+          <TabPanel>4</TabPanel>
+        </TabsManager>
+      </section>
       <section>
         <h2>Variants</h2>
         <p>The Button comes have three variants</p>

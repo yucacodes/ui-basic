@@ -6,31 +6,49 @@ import { extname, relative } from 'path'
 import { fileURLToPath } from 'node:url'
 import { glob } from 'glob'
 import { qwikVite } from '@builder.io/qwik/optimizer'
+import { qwikCity } from '@builder.io/qwik-city/vite'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
-const docsConfig = defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: [
-      {
-        find: '@lib',
-        replacement: fileURLToPath(new URL('./lib/main.react', import.meta.url)),
-      },
-    ],
-  },
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks: (moduleId) => {
-          if (
-            moduleId.includes('node_modules') &&
-            moduleId.includes('react-syntax-highlighter')
-          )
-            return 'react-syntax-highlighter'
-        },
+const docsConfig = defineConfig(() => {
+  return {
+    plugins: [qwikCity(), qwikVite(), tsconfigPaths()],
+    dev: {
+      headers: {
+        'Cache-Control': 'public, max-age=0',
       },
     },
-  },
+    preview: {
+      headers: {
+        'Cache-Control': 'public, max-age=600',
+      },
+    },
+  }
 })
+
+// const docsConfig = defineConfig({
+//   plugins: [react()],
+//   resolve: {
+//     alias: [
+//       {
+//         find: '@lib',
+//         replacement: fileURLToPath(new URL('./lib/main.react', import.meta.url)),
+//       },
+//     ],
+//   },
+//   build: {
+//     rollupOptions: {
+//       output: {
+//         manualChunks: (moduleId) => {
+//           if (
+//             moduleId.includes('node_modules') &&
+//             moduleId.includes('react-syntax-highlighter')
+//           )
+//             return 'react-syntax-highlighter'
+//         },
+//       },
+//     },
+//   },
+// })
 
 const reactLibConfig = defineConfig({
   build: {

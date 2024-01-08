@@ -1,0 +1,52 @@
+pre.tsxhl .keyword {
+  color: #bbdaff;
+}
+
+pre.txhl .language-xml,
+pre.txhl .language-xml .tag {
+  color: #ffffff;
+}
+
+pre.tsxhl .title,
+pre.tsxhl .tag .name {
+  color: #c678dd;
+  font-weight: bold;
+}
+
+pre.tsxhl .tag .attr {
+  color: #ff9da4;
+}
+
+pre.tsxhl .comment {
+  color: #7285b7;
+}
+
+pre.tsxhl .variable,
+pre.tsxhl .attribute,
+pre.tsxhl .regexp {
+  color: #ff9da4;
+}
+
+pre.tsxhl .number,
+pre.tsxhl .literal,
+pre.tsxhl .params,
+pre.tsxhl .constant {
+  color: #ffc58f;
+}
+
+pre.tsxhl .string,
+pre.tsxhl .value,
+pre.tsxhl .inheritance {
+  color: #d1f1a9;
+}
+
+
+pre.tsxhl {
+  display: block;
+  background: #002451;
+  color: white;
+  font-family: Menlo, Monaco, Consolas, monospace;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  padding: 10px;
+}

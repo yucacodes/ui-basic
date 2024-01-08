@@ -1,4 +1,4 @@
-import { CodeViewer } from '../../components/CodeViewer/CodeViewer'
+import { TsxPreview } from '@lib'
 
 import variantExampleNode from './Button.variant.example'
 import variantExampleCode from './Button.variant.example.tsx?raw'
@@ -14,8 +14,9 @@ import controlsExampleCode from './Button.controls.example.tsx?raw'
 
 import sizeExampleNode from './Button.size.example'
 import sizeExampleCode from './Button.size.example.tsx?raw'
+import { component$ } from '@builder.io/qwik'
 
-export function ButtonDocs() {
+export const ButtonDocs = component$(() => {
   return (
     <article>
       <header>
@@ -32,7 +33,9 @@ export function ButtonDocs() {
         <h2>Variants</h2>
         <p>The Button comes have three variants</p>
         <figure>
-          <CodeViewer code={variantExampleCode} node={variantExampleNode} />
+          <TsxPreview code={variantExampleCode}>
+            {variantExampleNode}
+          </TsxPreview>
         </figure>
       </section>
       <br />
@@ -40,10 +43,9 @@ export function ButtonDocs() {
         <h2>Theme colors</h2>
         <p>The Button comes with seven options of theme defined colors</p>
         <figure>
-          <CodeViewer
-            code={themeColorExampleCode}
-            node={themeColorExampleNode}
-          />
+          <TsxPreview code={themeColorExampleCode}>
+            {themeColorExampleNode}
+          </TsxPreview>
         </figure>
       </section>
       <br />
@@ -54,10 +56,9 @@ export function ButtonDocs() {
           contrast color is set automatically.
         </p>
         <figure>
-          <CodeViewer
-            code={customColorExampleCode}
-            node={customColorExampleNode}
-          />
+          <TsxPreview code={customColorExampleCode}>
+            {customColorExampleNode}
+          </TsxPreview>
         </figure>
       </section>
       <br />
@@ -68,7 +69,9 @@ export function ButtonDocs() {
           loading.
         </p>
         <figure>
-          <CodeViewer code={controlsExampleCode} node={controlsExampleNode} />
+          <TsxPreview code={controlsExampleCode}>
+            {controlsExampleNode}
+          </TsxPreview>
         </figure>
       </section>
       <br />
@@ -78,9 +81,9 @@ export function ButtonDocs() {
           Controll the size of the button, default size is equals to font-size
         </p>
         <figure>
-          <CodeViewer code={sizeExampleCode} node={sizeExampleNode} />
+          <TsxPreview code={sizeExampleCode}>{sizeExampleNode}</TsxPreview>
         </figure>
       </section>
     </article>
   )
-}
+})

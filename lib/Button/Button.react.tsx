@@ -1,3 +1,5 @@
+/** @jsxImportSource react */
+
 import classNames from 'classnames'
 import type { MouseEventHandler, ReactNode } from 'react'
 import { colorFlagsOptions } from '../Theme/ColorFlags'

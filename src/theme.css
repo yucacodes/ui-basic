@@ -1,0 +1,26 @@
+/* Fonts */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Lato';
+  font-weight: normal;
+  color: var(--heading-text-color);
+}
+
+html,
+body,
+p {
+  font-family: 'IBM Plex Sans';
+  color: var(--default-text-color);
+}
+
+/* Theme colors */
+
+:root {
+  --default-text-color: #303030;
+  --heading-text-color: #101010;
+}
+
+/* Buttons */

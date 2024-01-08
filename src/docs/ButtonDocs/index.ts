@@ -1,1 +1,1 @@
-export { ButtonDocs as default } from './ButtonDocs'
+export { ButtonDocs } from './ButtonDocs'

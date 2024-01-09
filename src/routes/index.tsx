@@ -1,12 +1,15 @@
 import { component$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 import { ButtonDocs } from '~/docs/ButtonDocs'
+import { SidePanelLayout, CenterContentLayout } from '@lib'
 
 export default component$(() => {
   return (
-    <>
-      <ButtonDocs />
-    </>
+    <SidePanelLayout>
+      <CenterContentLayout q:slot="main">
+        <ButtonDocs />
+      </CenterContentLayout>
+    </SidePanelLayout>
   )
 })
 

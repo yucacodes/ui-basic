@@ -1,9 +1,40 @@
+.tabsManager {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabList {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.tabPanelList {
+  position: relative;
+  border-top-right-radius: var(--tabs-border-radius, 0);
+  border-bottom-left-radius: var(--tabs-border-radius, 0);
+  border-bottom-right-radius: var(--tabs-border-radius, 0);
+  overflow: hidden;
+  z-index: 1;
+}
+
 .tab {
   cursor: pointer;
+  background: #ffffff;
+  box-shadow: 0em 0.1em 0.3em 0em var(--shadow-color, rgba(0, 0, 0, 0.6));
+  border-top-right-radius: var(--tabs-border-radius, 0);
+  border-top-left-radius: var(--tabs-border-radius, 0);
+  padding: 0.2em 0.5em;
+  overflow: hidden;
+  opacity: 0.5;
+  transition: opacity 0.3s ease,box-shadow 0.3s ease;
 }
 
 .tab.selected {
-  color: green;
+  box-shadow: 0.2em 0.1em 0.3em 0em var(--shadow-color, rgba(0, 0, 0, 0.6));
+  opacity: 1;
 }
 
 .tabPanel {

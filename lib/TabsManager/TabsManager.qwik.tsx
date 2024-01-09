@@ -38,7 +38,7 @@ export const TabsManager = component$((props: TabsManagerProps) => {
   useContextProvider(tabsContext, contextState)
 
   return (
-    <div class={[styles.tabs, props.class]}>
+    <div class={[styles.tabsManager, props.class]}>
       <Slot />
     </div>
   )
@@ -81,13 +81,27 @@ export const Tab = component$((props: TabProps) => {
 
 // ----------------------  Tab List ----------------------
 
-export interface TabsListProps {
+export interface TabListProps {
   class?: ClassList
 }
 
-export const TabList = component$((props: TabsListProps) => {
+export const TabList = component$((props: TabListProps) => {
   return (
     <div class={[props.class, styles.tabList]}>
+      <Slot />
+    </div>
+  )
+})
+
+// ----------------------  Tab Panel List ----------------------
+
+export interface TabPanelListProps {
+  class?: ClassList
+}
+
+export const TabPanelList = component$((props: TabPanelListProps) => {
+  return (
+    <div class={[props.class, styles.tabPanelList]}>
       <Slot />
     </div>
   )

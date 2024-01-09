@@ -1,0 +1,13 @@
+.root {
+  height: 100lvh;
+  display: flex;
+}
+
+.sidePanel {
+  height: 100%;
+  width: 15rem;
+}
+
+.main  {
+  flex-grow: 1;
+}

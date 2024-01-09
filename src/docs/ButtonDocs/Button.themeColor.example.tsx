@@ -1,7 +1,7 @@
-import { Button } from '@lib'
-
-export default ( // __HIDE__
-<div style={{ display: 'flex', gap: '1rem', alignItems: "center", justifyContent: "center", flexDirection: "column" }}> {/*__HIDE__*/}
+import { Button } from '@lib' // __EXCLUDE__
+// __EXCLUDE__
+export default ( // __EXCLUDE__
+<div style={{ display: 'flex', gap: '1rem', alignItems: "center", justifyContent: "center", flexDirection: "column" }}> {/*__EXCLUDE__*/}
 <>    
   <Button primary>
     Primary
@@ -27,5 +27,5 @@ export default ( // __HIDE__
     Black
   </Button>
 </>
-</div> // __HIDE__
-) // __HIDE__
+</div> // __EXCLUDE__
+) // __EXCLUDE__

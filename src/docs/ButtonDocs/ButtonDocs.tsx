@@ -1,4 +1,12 @@
-import { Tab, TabList, TabPanel, TabsManager, TsxPreview } from '@lib'
+import {
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanelList,
+  TabsManager,
+  TsxHighLight,
+  TsxPreview,
+} from '@lib'
 
 import variantExampleNode from './Button.variant.example'
 import variantExampleCode from './Button.variant.example.tsx?raw'
@@ -24,25 +32,31 @@ export const ButtonDocs = component$(() => {
         <p>
           Full reusable and deep customizable (With CSS variables) Button
           component.
-          <br /> <br />
+        </p>
+        <p>
           Require zero initial configuration, but is easily integrable with an
           app theme.
         </p>
       </header>
       <section>
-        <TabsManager selected={1}>
-          <TabList>
-            <Tab> One </Tab>
-            <Tab> Two </Tab>
-            <Tab> Three </Tab>
-            <Tab> Four </Tab>
-          </TabList>
-
-          <TabPanel>1</TabPanel>
-          <TabPanel>2</TabPanel>
-          <TabPanel>3</TabPanel>
-          <TabPanel>4</TabPanel>
-        </TabsManager>
+        <h2>Import</h2>
+        <p>import from the corresponding package according to your framework</p>
+        <figure>
+          <TabsManager>
+            <TabList>
+              <Tab> React </Tab>
+              <Tab> Qwik </Tab>
+            </TabList>
+            <TabPanelList>
+              <TabPanel>
+                <TsxHighLight code="import { Button } from '@yucacodes/ui-react'" />
+              </TabPanel>
+              <TabPanel>
+                <TsxHighLight code="import { Button } from '@yucacodes/ui-qwik'" />
+              </TabPanel>
+            </TabPanelList>
+          </TabsManager>
+        </figure>
       </section>
       <section>
         <h2>Variants</h2>

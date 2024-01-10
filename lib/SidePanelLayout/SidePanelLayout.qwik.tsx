@@ -11,7 +11,7 @@ export const SidePanelLayout = component$((props: SidePanelLayoutProps) => {
   return (
     <div class={[styles.root, props.class]}>
       <div class={styles.sidePanel}>
-        <Slot name="sidePanel" />
+        <Slot name="panel" />
       </div>
       <div class={styles.main}>
         <Slot name="main" />

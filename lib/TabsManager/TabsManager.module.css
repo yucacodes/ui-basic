@@ -1,8 +1,6 @@
 .tabsManager {
   display: flex;
   flex-direction: column;
-  --cod-prev-border-radius: 0;
-  --cod-hl-border-radius: 0;
 }
 
 .tabList {
@@ -32,7 +30,7 @@
   padding: 0.2em 0.5em;
   overflow: hidden;
   opacity: 0.5;
-  transition: opacity 0.3s ease,box-shadow 0.3s ease;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -54,6 +52,10 @@
 
 .tabPanel {
   display: none;
+}
+
+.tabPanel > * {
+  border-top-left-radius: 0 !important;
 }
 
 .tabPanel.selected {

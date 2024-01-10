@@ -1,16 +1,17 @@
 import { component$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
+import { ButtonDocs } from '~/docs/ButtonDocs'
 
 export default component$(() => {
-  return <div />
+  return <ButtonDocs />
 })
 
 export const head: DocumentHead = {
-  title: 'Yuca UI',
+  title: 'Button',
   meta: [
     {
-      name: 'Yuca UI',
-      content: 'Yuca UI Library',
+      name: 'Button',
+      content: 'Button component docs',
     },
   ],
 }

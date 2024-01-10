@@ -58,7 +58,7 @@ export const ButtonDocs = component$(() => {
       </section>
       <section>
         <h2>Variants</h2>
-        <p>The Button comes have three variants</p>
+        <p>The Button have three variants</p>
         <figure>
           <TsxPreview code={variantExampleCode}>
             {variantExampleNode}

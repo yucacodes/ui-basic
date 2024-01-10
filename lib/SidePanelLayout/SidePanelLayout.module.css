@@ -1,13 +1,22 @@
 .root {
   height: 100lvh;
   display: flex;
+  position: relative;
 }
 
 .sidePanel {
   height: 100%;
   width: 15rem;
+  position: absolute;
+  left: -15rem;
 }
 
 .main  {
   flex-grow: 1;
+}
+
+@media (min-width: 1200px) {
+  .sidePanel {
+    position: static;
+  }
 }

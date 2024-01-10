@@ -13,7 +13,7 @@ export default ( // __EXCLUDE__
         style={{
           background: "green",
           width: "14rem",
-          height: "2rem"
+          height: "5rem"
         }}
       />
     </TabPanel>
@@ -22,7 +22,7 @@ export default ( // __EXCLUDE__
         style={{
           background: "orange",
           width: "14rem",
-          height: "2rem"
+          height: "5rem"
         }}
       />
     </TabPanel>

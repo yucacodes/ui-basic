@@ -1,5 +1,6 @@
 import { ClassList, Slot, component$ } from '@builder.io/qwik'
-import { useNavigate } from '@builder.io/qwik-city'
+import { Link, useLocation } from '@builder.io/qwik-city'
+import rippleAnimation from '../CssAnimations/ripple.module.css'
 import styles from './NavLink.module.css'
 
 export interface NavLinkProps {
@@ -8,18 +9,19 @@ export interface NavLinkProps {
 }
 
 export const NavLink = component$((props: NavLinkProps) => {
-  const navigate = useNavigate()
+  const loc = useLocation()
 
   return (
-    <a
-      class={[styles.root, props.class]}
+    <Link
+      class={[
+        rippleAnimation.root,
+        styles.root,
+        props.class,
+        loc.url.pathname === props.href && styles.current,
+      ]}
       href={props.href}
-      onClick$={(evt) => {
-        evt.preventDefault()
-        navigate(props.href)
-      }}
     >
       <Slot />
-    </a>
+    </Link>
   )
 })

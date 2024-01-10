@@ -6,6 +6,7 @@ import { customColorVariables } from '../Theme/customColorVariables'
 import { selectedFlag } from '../Theme/selectedFlag'
 import { CButtonProps, buttonVariantFlagsOptions } from './Button.common'
 import styles from './Button.module.css'
+import rippleAnimation from '../CssAnimations/ripple.module.css'
 
 export interface ButtonProps extends CButtonProps {
   class?: ClassList
@@ -28,7 +29,8 @@ export const Button = component$(
         onClick$={props.onClick$}
         class={[
           props.class,
-          styles['button'],
+          styles.button,
+          rippleAnimation.root,
           styles[themeColor ?? 'primary'],
           styles[variant ?? 'contained'],
           loading && styles['loading'],

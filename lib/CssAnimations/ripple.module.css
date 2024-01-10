@@ -1,0 +1,38 @@
+.root:focus:not(:disabled)::before {
+  left: calc(50% - 0.1rem);
+  top: calc(50% - 0.1rem);
+  content: '';
+  display: block;
+  background: var(--ripple-color);
+  opacity: 0.1;
+  width: 0.2em;
+  height: 0.2em;
+  position: absolute;
+  border-radius: 50%;
+  animation: clickripple 400ms ease-out forwards,
+    clickfade 300ms ease-out forwards;
+}
+
+@keyframes clickripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.1;
+  }
+  80% {
+    transform: scale(100);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(100);
+    opacity: 0;
+  }
+}
+
+@keyframes clickfade {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}

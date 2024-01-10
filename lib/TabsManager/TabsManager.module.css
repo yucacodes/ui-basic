@@ -21,6 +21,7 @@
 }
 
 .tab {
+  position: relative;
   cursor: pointer;
   background: #ffffff;
   box-shadow: 0em 0.1em 0.3em 0em var(--shadow-color, rgba(0, 0, 0, 0.6));
@@ -35,6 +36,17 @@
 .tab.selected {
   box-shadow: 0.2em 0.1em 0.3em 0em var(--shadow-color, rgba(0, 0, 0, 0.6));
   opacity: 1;
+}
+
+.tab.selected::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0.1em;
+  height: calc(100% - 0.1em);
+  width: 0.3em;
+  background: var(--accent-color, #05c77d);
 }
 
 .tabPanel {

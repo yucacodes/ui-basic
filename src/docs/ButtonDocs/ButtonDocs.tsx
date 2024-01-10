@@ -32,8 +32,6 @@ export const ButtonDocs = component$(() => {
         <p>
           Full reusable and deep customizable (With CSS variables) Button
           component.
-        </p>
-        <p>
           Require zero initial configuration, but is easily integrable with an
           app theme.
         </p>

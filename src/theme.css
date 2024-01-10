@@ -21,7 +21,9 @@ p {
 :root {
   --default-text-color: #303030;
   --heading-text-color: #101010;
-  --tabs-border-radius: 0.5em;
+  --tabs-border-radius: 0.3em;
+  --cod-prev-border-radius: 0.3em;
+  --cod-hl-border-radius: 0.3em;
 }
 
 /* Buttons */

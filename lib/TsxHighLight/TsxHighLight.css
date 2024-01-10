@@ -40,7 +40,6 @@ pre.tsxhl .inheritance {
   color: #d1f1a9;
 }
 
-
 pre.tsxhl {
   display: block;
   background: #002451;
@@ -48,4 +47,5 @@ pre.tsxhl {
   font-family: Menlo, Monaco, Consolas, monospace;
   padding: 0.5rem;
   margin: 0;
+  border-radius: var(--cod-hl-border-radius, 0);
 }

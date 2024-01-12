@@ -1,5 +1,6 @@
 export * from './Button/Button.qwik'
 export * from './CenterContentLayout/CenterContentLayout.qwik'
+export * from './HeaderLayout/HeaderLayout.qwik'
 export * from './NavLink/NavLink.qwik'
 export * from './SideNav/SideNav.qwik'
 export * from './SidePanelLayout/SidePanelLayout.qwik'

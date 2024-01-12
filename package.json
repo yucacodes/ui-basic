@@ -37,6 +37,7 @@
     "@builder.io/qwik-city": "^1.3.2",
     "@fontsource/ibm-plex-sans": "^5.0.18",
     "@fontsource/lato": "^5.0.18",
+    "@qwikest/icons": "^0.0.13",
     "highlight.js": "^11.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

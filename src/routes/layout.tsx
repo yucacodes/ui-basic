@@ -1,37 +1,39 @@
-import { component$, Slot, useSignal } from '@builder.io/qwik'
+import { component$, Slot } from '@builder.io/qwik'
+import { LuMenu } from '@qwikest/icons/lucide'
 import {
   Button,
   CenterContentLayout,
+  HeaderLayout,
   NavLink,
   SideNav,
   SidePanelLayout,
+  ToogleSidePanel,
 } from '@lib'
 
 export default component$(() => {
-  const openPanelSig = useSignal(false)
   return (
-    <SidePanelLayout openPanel={openPanelSig.value}>
-      <SideNav
-        q:slot="panel"
-        onClik$={() => {
-          openPanelSig.value = false
-        }}
-      >
+    <SidePanelLayout>
+      <SideNav q:slot="panel">
         <NavLink href="/Accordion/">Accordion</NavLink>
         <NavLink href="/Button/">Button</NavLink>
         <NavLink href="/TabsManager/">TabsManager</NavLink>
         <NavLink href="/SidePanel/">SidePanel</NavLink>
       </SideNav>
-      <CenterContentLayout q:slot="main">
-        <Button
-          onClick$={() => {
-            openPanelSig.value = !openPanelSig.value
-          }}
+      <HeaderLayout hideHeader:pc>
+        <header
+          q:slot="header"
+          style={{ padding: '0.2rem', display: 'flex', alignItems: 'center' }}
         >
-          Toggle
-        </Button>
-        <Slot />
-      </CenterContentLayout>
+          <ToogleSidePanel>
+            <Button black text>
+              <LuMenu font-size="2.1rem" />
+            </Button>
+          </ToogleSidePanel>
+        </header>
+        <CenterContentLayout>
+          <Slot />
+        </CenterContentLayout>
+      </HeaderLayout>
     </SidePanelLayout>
   )
 })

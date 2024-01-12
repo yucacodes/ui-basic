@@ -14,7 +14,7 @@ export default ( // __EXCLUDE__
   <div style={{ display: 'flex', gap: '1rem', alignItems: "center", justifyContent: "center", flexDirection: "column" }}> {/*__EXCLUDE__*/}
 <>
   <Resizable 
-    onSizeChange$={(size) => console.log(size)}
+    onSizeChange={(size) => console.log(size)}
     style={style} 
   >
       resize this box and see console logs

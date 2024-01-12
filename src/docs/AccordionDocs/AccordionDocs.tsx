@@ -35,14 +35,10 @@ export const AccordionDocs = component$(() => {
             </TabList>
             <TabPanelList>
               <TabPanel>
-                <TsxHighLight code={`
-import { Accordion } from '@yucacodes/ui-react'"
-                `} />
+                <TsxHighLight code={`import { Accordion } from '@yucacodes/ui-react'"`} />
               </TabPanel>
               <TabPanel>
-              <TsxHighLight code={`
-import { Accordion } from '@yucacodes/ui-qwik'"
-                `} />
+              <TsxHighLight code={`import { Accordion } from '@yucacodes/ui-qwik'"`} />
               </TabPanel>
             </TabPanelList>
           </TabsManager>

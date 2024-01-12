@@ -15,7 +15,8 @@ import disabledExampleNode from './Resizable.disabled.example'
 import disabledExampleCode from './Resizable.disabled.example.tsx?raw'
 
 import onSizeChangeExampleNode from './Resizable.onSizeChange.qwik.example'
-import onSizeChangeExampleCode from './Resizable.onSizeChange.qwik.example.tsx?raw'
+import onSizeChangeQwikExampleCode from './Resizable.onSizeChange.qwik.example.tsx?raw'
+import onSizeChangeReactExampleCode from './Resizable.onSizeChange.react.example.tsx?raw'
 
 import { component$ } from '@builder.io/qwik'
 
@@ -81,10 +82,12 @@ export const ResizableDocs = component$(() => {
             </TabList>
             <TabPanelList>
               <TabPanel>
-                <TsxHighLight code={``} />
+              <TsxPreview code={onSizeChangeReactExampleCode}>
+                  {onSizeChangeExampleNode}
+                </TsxPreview>
               </TabPanel>
               <TabPanel>
-                <TsxPreview code={onSizeChangeExampleCode}>
+                <TsxPreview code={onSizeChangeQwikExampleCode}>
                   {onSizeChangeExampleNode}
                 </TsxPreview>
               </TabPanel>

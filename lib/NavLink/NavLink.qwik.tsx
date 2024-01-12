@@ -1,3 +1,5 @@
+/** @jsxImportSource @builder.io/qwik */
+
 import { ClassList, Slot, component$ } from '@builder.io/qwik'
 import { Link, useLocation } from '@builder.io/qwik-city'
 import rippleAnimation from '../CssAnimations/ripple.module.css'

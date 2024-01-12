@@ -14,10 +14,11 @@ export default component$(() => {
   return (
     <SidePanelLayout>
       <SideNav q:slot="panel">
-        <NavLink href="/Accordion/">Accordion</NavLink>
-        <NavLink href="/Button/">Button</NavLink>
-        <NavLink href="/TabsManager/">TabsManager</NavLink>
-        <NavLink href="/SidePanel/">SidePanel</NavLink>
+        <NavLink href="/accordion/">Accordion</NavLink>
+        <NavLink href="/button/">Button</NavLink>
+        <NavLink href="/tabs-manager/">TabsManager</NavLink>
+        <NavLink href="/resizable/">Resizable</NavLink>
+        <NavLink href="/side-panel/">SidePanel</NavLink>
       </SideNav>
       <HeaderLayout hideHeader:pc>
         <header

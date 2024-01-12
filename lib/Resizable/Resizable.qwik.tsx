@@ -18,7 +18,7 @@ export interface ResizableProps {
 
 export const Resizable = component$((props: ResizableProps) => {
   const onDragSig = useSignal<boolean>(false)
-  const ref = useSignal<HTMLElement | undefined>()
+  const ref = useSignal<HTMLElement>()
 
   const handleMouse = $((event: MouseEvent) => {
     if (event.type === 'mousedown') {
@@ -26,9 +26,9 @@ export const Resizable = component$((props: ResizableProps) => {
     } else if (event.type === 'mouseup' || event.type === 'mouseleave') {
       onDragSig.value = false
     } else if (event.type === 'mousemove' && ref.value && onDragSig.value) {
-      const panelElement = ref.value
-      const { clientX } = event
-      panelElement.style.width = clientX + 'px'
+      const root = ref.value
+      const { left } = root.getBoundingClientRect()
+      root.style.width = event.clientX - left + 'px'
     }
   })
 

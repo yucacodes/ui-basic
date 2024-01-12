@@ -4,11 +4,12 @@ export default ( // __EXCLUDE__
   <div style={{ display: 'flex', gap: '1rem', alignItems: "center", justifyContent: "center", flexDirection: "column" }}> {/*__EXCLUDE__*/}
 <Resizable 
   style={{ 
-    width: "10rem", 
     minWidth: "5rem", 
     maxWidth: "15rem", 
-    height: "10rem", 
-    background: "yellow" 
+    minHeight: "5rem", 
+    maxHeight: "15rem", 
+    background: "yellow",
+    padding: "1rem", 
   }}
 >
   resize the box

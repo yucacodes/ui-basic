@@ -2,13 +2,7 @@
   position: relative;
 }
 
-body.onDrag {
-  user-select: none;
-  cursor: ew-resize !important;
-}
-
-.dragBorder {
-  content: '';
+.dragBorderX {
   display: inline-block;
   position: absolute;
   right: -0.5rem;
@@ -17,11 +11,52 @@ body.onDrag {
   height: 100%;
 }
 
-.dragBorder:hover,
-.dragBorder.onDrag {
+.dragBorderY {
+  display: inline-block;
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  height: 0.5rem;
+  width: 100%;
+}
+
+.dragBorderX:hover,
+.dragBorderY:hover,
+.dragBorderX.onDragX,
+.dragBorderX.onDragXY,
+.dragBorderY.onDragY,
+.dragBorderY.onDragXY {
   background: rgba(
-    var(--nav-link-color-rgb, var(--primary-color-rgb, 158, 96, 240)),
+    var(--drag-border-color-rgb, var(--primary-color-rgb, 158, 96, 240)),
     0.1
   );
+}
+
+.dragBorderX:hover {
   cursor: ew-resize;
+}
+
+.dragBorderY:hover {
+  cursor: ns-resize;
+}
+
+body.onDragX,
+.dragBorderX.onDragX,
+.dragBorderY.onDragX {
+  user-select: none;
+  cursor: ew-resize !important;
+}
+
+body.onDragY,
+.dragBorderX.onDragY,
+.dragBorderY.onDragY {
+  user-select: none;
+  cursor: ns-resize !important;
+}
+
+body.onDragXY,
+.dragBorderX.onDragXY,
+.dragBorderY.onDragXY {
+  user-select: none;
+  cursor: nwse-resize !important;
 }

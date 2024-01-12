@@ -65,6 +65,7 @@ export const SidePanelLayout = component$((props: SidePanelLayoutProps) => {
       onClick$={handleRootClick}
     >
       <Resizable
+        disabled:y
         class={[styles.sidePanel, contextState.openPanel && styles.open]}
       >
         <Slot name="panel" />

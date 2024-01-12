@@ -11,6 +11,12 @@ import {
 import basicExampleNode from './Resizable.basic.example'
 import basicExampleCode from './Resizable.basic.example.tsx?raw'
 
+import disabledExampleNode from './Resizable.disabled.example'
+import disabledExampleCode from './Resizable.disabled.example.tsx?raw'
+
+import onSizeChangeExampleNode from './Resizable.onSizeChange.qwik.example'
+import onSizeChangeExampleCode from './Resizable.onSizeChange.qwik.example.tsx?raw'
+
 import { component$ } from '@builder.io/qwik'
 
 export const ResizableDocs = component$(() => {
@@ -35,10 +41,14 @@ export const ResizableDocs = component$(() => {
             </TabList>
             <TabPanelList>
               <TabPanel>
-                <TsxHighLight code={`import { Resizable } from '@yucacodes/ui-react'"`} />
+                <TsxHighLight
+                  code={`import { Resizable } from '@yucacodes/ui-react'"`}
+                />
               </TabPanel>
               <TabPanel>
-              <TsxHighLight code={`import { Resizable } from '@yucacodes/ui-qwik'"`} />
+                <TsxHighLight
+                  code={`import { Resizable } from '@yucacodes/ui-qwik'"`}
+                />
               </TabPanel>
             </TabPanelList>
           </TabsManager>
@@ -49,6 +59,37 @@ export const ResizableDocs = component$(() => {
         <p>Just use it</p>
         <figure>
           <TsxPreview code={basicExampleCode}>{basicExampleNode}</TsxPreview>
+        </figure>
+      </section>
+      <section>
+        <h2>Disabled </h2>
+        <p></p>
+        <figure>
+          <TsxPreview code={disabledExampleCode}>
+            {disabledExampleNode}
+          </TsxPreview>
+        </figure>
+      </section>
+      <section>
+        <h2>On Size Change Callback </h2>
+        <p></p>
+        <figure>
+          <TabsManager>
+            <TabList>
+              <Tab> React </Tab>
+              <Tab> Qwik </Tab>
+            </TabList>
+            <TabPanelList>
+              <TabPanel>
+                <TsxHighLight code={``} />
+              </TabPanel>
+              <TabPanel>
+                <TsxPreview code={onSizeChangeExampleCode}>
+                  {onSizeChangeExampleNode}
+                </TsxPreview>
+              </TabPanel>
+            </TabPanelList>
+          </TabsManager>
         </figure>
       </section>
       <br />

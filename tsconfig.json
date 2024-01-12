@@ -19,7 +19,8 @@
     "types": ["node", "vite/client"],
     "paths": {
       "~/*": ["./src/*"],
-      "@lib": ["./lib/main.qwik"]
+      "@lib": ["./lib/main.qwik"],
+      "@lib-react": ["./lib/main.react"]
     }
   },
   "include": ["src", "lib", "./*.d.ts", "./*.config.ts"]

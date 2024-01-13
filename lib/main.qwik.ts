@@ -8,4 +8,4 @@ export * from './SidePanelLayout/SidePanelLayout.qwik'
 export * from './TabsManager/TabsManager.qwik'
 export * from './TsxHighLight/TsxHighLight.qwik'
 export * from './TsxPreview/TsxPreview.qwik'
-
+export * from './SidePanel/SidePanel.qwik'

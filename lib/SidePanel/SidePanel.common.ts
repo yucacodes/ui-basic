@@ -6,6 +6,7 @@ export interface SidePanelSideFlags {
 }
 
 export interface CSidePanelProps extends SidePanelSideFlags {
+  resizable?: boolean
   open: boolean
   staticOnPc?: boolean
 }

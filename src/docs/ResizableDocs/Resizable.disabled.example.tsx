@@ -1,4 +1,4 @@
-import { Resizable } from '@lib'; // __EXCLUDE__
+import { Resizable } from '@yucacodes/ui-qwik'; // __EXCLUDE__
 // __EXCLUDE__
 const style = {  
   minWidth: "5rem", 
@@ -12,11 +12,11 @@ const style = {
 export default ( // __EXCLUDE__
   <div style={{ display: 'flex', gap: '1rem', alignItems: "center", justifyContent: "center", flexDirection: "column" }}> {/*__EXCLUDE__*/}
 <>
-  <Resizable disabled:x style={style}>
+  <Resizable disabledX style={style}>
     Disabled X
   </Resizable>
 
-  <Resizable disabled:y style={style}>
+  <Resizable disabledY style={style}>
     Disabled Y
   </Resizable>
 

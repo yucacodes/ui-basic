@@ -17,6 +17,7 @@ export const SidePanel = component$((props: SidePanelProps) => {
   return (
     <Resizable
       disabledY
+      disabled={!props.resizable}
       class={[
         props.class,
         styles.root,

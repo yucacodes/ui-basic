@@ -6,7 +6,7 @@ import {
   TabsManager,
   TsxHighLight,
   TsxPreview,
-} from '@lib'
+} from '@yucacodes/ui-qwik'
 
 import basicExampleNode from './Accordion.basic.example'
 import basicExampleCode from './Accordion.basic.example.tsx?raw'

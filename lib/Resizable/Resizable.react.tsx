@@ -8,9 +8,8 @@ import { CResizableProps } from './Resizable.common'
 type ResizeType = 'Y' | 'X' | 'XY'
 
 export interface ResizableProps extends CResizableProps {
-  class?: string
+  className?: string
   style?: CSSProperties
-  
   onSizeChange?: (size: { width: number; height: number }) => void
   children?: ReactNode
 }
@@ -62,7 +61,7 @@ export function Resizable(props: ResizableProps) {
   return (
     <div
       ref={ref}
-      className={classnames([props.class, styles.root])}
+      className={classnames([props.className, styles.root])}
       style={props.style}
     >
       {props.children}

@@ -6,7 +6,7 @@ import {
   TabsManager,
   TsxHighLight,
   TsxPreview,
-} from '@lib'
+} from '@yucacodes/ui-qwik'
 
 import variantExampleNode from './Button.variant.example'
 import variantExampleCode from './Button.variant.example.tsx?raw'

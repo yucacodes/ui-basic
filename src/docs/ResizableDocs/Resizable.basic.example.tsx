@@ -1,4 +1,5 @@
-import { Resizable } from '@lib'; // __EXCLUDE__
+/** @jsxImportSource @builder.io/qwik */ // __EXCLUDE__
+import { Resizable } from '@yucacodes/ui-qwik'; // __EXCLUDE__
 // __EXCLUDE__
 export default ( // __EXCLUDE__
   <div style={{ display: 'flex', gap: '1rem', alignItems: "center", justifyContent: "center", flexDirection: "column" }}> {/*__EXCLUDE__*/}

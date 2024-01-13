@@ -6,7 +6,7 @@ import {
   TabsManager,
   TsxHighLight,
   TsxPreview,
-} from '@lib'
+} from '@yucacodes/ui-qwik'
 
 import basicExampleNode from './TabsManager.basic.example'
 import basicExampleCode from './TabsManager.basic.example.tsx?raw'

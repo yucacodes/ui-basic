@@ -1,5 +1,5 @@
 /** @jsxImportSource react */ // __EXCLUDE__
-import { Resizable } from '@lib-react'; // __EXCLUDE__
+import { Resizable } from '@yucacodes/ui-react'; // __EXCLUDE__
 // __EXCLUDE__
 const style = {  
   minWidth: "10rem", 

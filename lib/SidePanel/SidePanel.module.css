@@ -2,7 +2,7 @@
   top: 0;
   height: 100%;
   width: var(--side-panel-width, 20rem);
-  min-width: var(--side-panel-min-width, 16rem);
+  min-width: var(--side-panel-min-width, 0);
   max-width: var(--side-panel-max-width, 26rem);
   position: absolute !important;
   transition: left 0.5s ease,right 0.5s ease;

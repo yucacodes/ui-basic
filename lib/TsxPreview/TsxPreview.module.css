@@ -4,7 +4,7 @@
   align-items: stretch;
   justify-content: center;
   border: 1px solid #606060;
-  background-color: rgba(200, 255, 255, 0.1);
+  background-color: rgb(235, 246, 250);
   overflow: hidden;
   position: relative;
   border-radius: var(--cod-prev-border-radius, 0);
@@ -17,7 +17,6 @@
 
 .preview {
   flex-grow: 1;
-  padding: 1rem;
 }
 
 .tsxhl,

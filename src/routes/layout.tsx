@@ -8,7 +8,7 @@ import {
   SideNav,
   SidePanelLayout,
   ToogleSidePanel,
-} from '@lib'
+} from '@yucacodes/ui-qwik'
 
 export default component$(() => {
   return (

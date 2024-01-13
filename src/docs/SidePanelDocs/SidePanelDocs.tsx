@@ -6,10 +6,11 @@ import {
   TabsManager,
   TsxHighLight,
   TsxPreview,
-} from '@lib'
+} from '@yucacodes/ui-qwik'
 
-import basicExampleNode from './SidePanel.basic.example'
-import basicExampleCode from './SidePanel.basic.example.tsx?raw'
+import basicExampleNode from './SidePanel.basic.qwik.example'
+import basicExampleQwikCode from './SidePanel.basic.qwik.example.tsx?raw'
+import basicExampleReactCode from './SidePanel.basic.react.example.tsx?raw'
 
 import { component$ } from '@builder.io/qwik'
 
@@ -52,7 +53,24 @@ export const SidePanelDocs = component$(() => {
         <h2>Basic Usage</h2>
         <p>Simply set open prop</p>
         <figure>
-          <TsxPreview code={basicExampleCode}>{basicExampleNode}</TsxPreview>
+          <TabsManager>
+            <TabList>
+              <Tab> React </Tab>
+              <Tab> Qwik </Tab>
+            </TabList>
+            <TabPanelList>
+              <TabPanel>
+                <TsxPreview code={basicExampleReactCode}>
+                  {basicExampleNode}
+                </TsxPreview>
+              </TabPanel>
+              <TabPanel>
+                <TsxPreview code={basicExampleQwikCode}>
+                  {basicExampleNode}
+                </TsxPreview>
+              </TabPanel>
+            </TabPanelList>
+          </TabsManager>
         </figure>
       </section>
       <br />

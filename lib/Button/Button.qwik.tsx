@@ -1,6 +1,12 @@
 /** @jsxImportSource @builder.io/qwik */
 
-import { ClassList, PropFunction, Slot, component$ } from '@builder.io/qwik'
+import {
+  CSSProperties,
+  ClassList,
+  PropFunction,
+  Slot,
+  component$,
+} from '@builder.io/qwik'
 import { colorFlagsOptions } from '../Theme/ColorFlags'
 import { customColorVariables } from '../Theme/customColorVariables'
 import { selectedFlag } from '../Theme/selectedFlag'
@@ -10,6 +16,7 @@ import rippleAnimation from '../CssAnimations/ripple.module.css'
 
 export interface ButtonProps extends CButtonProps {
   class?: ClassList
+  style?: CSSProperties
   onClick$?: PropFunction<
     (event: PointerEvent, element: HTMLButtonElement) => any
   >
@@ -25,7 +32,7 @@ export const Button = component$(
       <button
         type={props.type}
         disabled={props.disabled}
-        style={{ ...colorVariables, fontSize: props.size }}
+        style={{ ...colorVariables, fontSize: props.size, ...props.style }}
         onClick$={props.onClick$}
         class={[
           props.class,

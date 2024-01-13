@@ -1,4 +1,4 @@
-import { Resizable } from '@lib'; // __EXCLUDE__
+import { Resizable } from '@yucacodes/ui-qwik'; // __EXCLUDE__
 // __EXCLUDE__
 const style = {  
   minWidth: "10rem", 

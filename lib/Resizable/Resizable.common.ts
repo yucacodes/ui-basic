@@ -1,6 +1,5 @@
-
 export interface CResizableProps {
-  'disabled:x'?: boolean
-  'disabled:y'?: boolean
+  disabledX?: boolean
+  disabledY?: boolean
   disabled?: boolean
 }

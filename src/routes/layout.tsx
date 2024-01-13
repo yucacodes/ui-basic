@@ -12,7 +12,7 @@ import {
 
 export default component$(() => {
   return (
-    <SidePanelLayout>
+    <SidePanelLayout left>
       <SideNav q:slot="panel">
         <NavLink href="/accordion/">Accordion</NavLink>
         <NavLink href="/button/">Button</NavLink>
@@ -20,7 +20,7 @@ export default component$(() => {
         <NavLink href="/resizable/">Resizable</NavLink>
         <NavLink href="/side-panel/">SidePanel</NavLink>
       </SideNav>
-      <HeaderLayout hideHeader:pc>
+      <HeaderLayout hideHeaderOnPc>
         <header
           q:slot="header"
           style={{ padding: '0.2rem', display: 'flex', alignItems: 'center' }}

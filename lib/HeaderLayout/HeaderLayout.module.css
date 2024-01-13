@@ -19,7 +19,10 @@
 }
 
 @media (min-width: 1200px) {
-  .header.hideOnPc {
+  .root.hideOnPc .header {
     display: none;
+  }
+  .root.hideOnPc .main {
+    padding-top: 0;
   }
 }

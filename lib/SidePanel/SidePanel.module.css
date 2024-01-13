@@ -1,0 +1,39 @@
+.root {
+  height: 100%;
+  width: var(--side-panel-width, 20rem);
+  min-width: var(--side-panel-min-width, 16rem);
+  max-width: var(--side-panel-max-width, 26rem);
+  position: absolute !important;
+  transition: left 0.5s ease,right 0.5s ease;
+  background-color: var(--side-panel-bg-color, var(--paper-color, #ffffff));
+  z-index: 2;
+  box-shadow: 0em 0.1em 0.3em 0em var(--shadow-color, rgba(0, 0, 0, 0.2));
+}
+
+.root.left {
+  left: var(--side-panel-max-width-negative, -26rem);
+}
+
+.root.right {
+  right: var(--side-panel-max-width-negative, -26rem);
+}
+
+.root.left.open {
+  left: 0;
+}
+
+.root.right.open {
+  right: 0;
+}
+
+@media (min-width: 1200px) {
+  .root.staticOnPc.left {
+    position: relative !important;
+    left: unset;
+  }
+
+  .root.staticOnPc.right {
+    position: relative !important;
+    right: unset;
+  }
+}

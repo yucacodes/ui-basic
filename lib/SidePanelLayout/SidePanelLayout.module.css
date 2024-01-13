@@ -4,52 +4,14 @@
   position: relative;
 }
 
-.root.onDrag {
-  user-select: none;
-  cursor: ew-resize !important;
+.root.left {
+  flex-direction: row;
 }
 
-.sidePanel {
-  height: 100%;
-  left: var(--side-panel-max-width-negative, -26rem);
-  width: var(--side-panel-min-width, 16rem);
-  min-width: var(--side-panel-min-width, 16rem);
-  max-width: var(--side-panel-max-width, 26rem);
-  position: absolute;
-  transition: left 0.5s ease;
-  background-color: var(--side-panel-bg-color, var(--paper-color, #ffffff));
-  z-index: 2;
-  box-shadow: 0em 0.1em 0.3em 0em var(--shadow-color, rgba(0, 0, 0, 0.2));
-}
-
-.sidePanel.open {
-  left: 0;
+.root.right {
+  flex-direction: row-reverse;
 }
 
 .main {
   flex-grow: 1;
-}
-
-.sideBorder {
-  position: absolute;
-  right: -0.5rem;
-  top: 0;
-  width: 0.5rem;
-  height: 100%;
-}
-
-.sideBorder:hover,
-.sideBorder.focus {
-  background: rgba(
-    var(--nav-link-color-rgb, var(--primary-color-rgb, 158, 96, 240)),
-    0.1
-  );
-  cursor: ew-resize;
-}
-
-@media (min-width: 1200px) {
-  .sidePanel {
-    position: relative;
-    left: unset;
-  }
 }

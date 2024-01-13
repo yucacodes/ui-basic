@@ -10,8 +10,8 @@ import {
   useSignal,
   useTask$,
 } from '@builder.io/qwik'
-import styles from './Resizable.module.css'
 import { CResizableProps } from './Resizable.common'
+import styles from './Resizable.module.css'
 
 type ResizeType = 'Y' | 'X' | 'XY'
 
@@ -29,9 +29,9 @@ export const Resizable = component$((props: ResizableProps) => {
 
   const handleMouse = $((event: MouseEvent) => {
     if (event.type === 'mousedown') {
-      if (props.disabled || (props['disabled:x'] && props['disabled:y'])) return
-      if (props['disabled:x']) resizeTypeSig.value = 'Y'
-      else if (props['disabled:y']) resizeTypeSig.value = 'X'
+      if (props.disabled || (props.disabledX && props.disabledY)) return
+      if (props.disabledX) resizeTypeSig.value = 'Y'
+      else if (props.disabledY) resizeTypeSig.value = 'X'
       else resizeTypeSig.value = 'XY'
     } else if (event.type === 'mouseup' || event.type === 'mouseleave') {
       resizeTypeSig.value = undefined
@@ -71,7 +71,7 @@ export const Resizable = component$((props: ResizableProps) => {
   return (
     <div ref={ref} class={[props.class, styles.root]} style={props.style}>
       <Slot />
-      {!props['disabled:x'] && !props.disabled && (
+      {!props.disabledX && !props.disabled && (
         <div
           class={[
             styles.dragBorderX,
@@ -80,7 +80,7 @@ export const Resizable = component$((props: ResizableProps) => {
           onMouseDown$={handleMouse}
         ></div>
       )}
-      {!props['disabled:y'] && !props.disabled && (
+      {!props.disabledY && !props.disabled && (
         <div
           class={[
             styles.dragBorderY,

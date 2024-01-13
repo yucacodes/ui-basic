@@ -21,9 +21,9 @@ export function Resizable(props: ResizableProps) {
 
   const handleMouse = (event: React.MouseEvent<HTMLElement> | MouseEvent) => {
     if (event.type === 'mousedown') {
-      if (props.disabled || (props['disabled:x'] && props['disabled:y'])) return
-      if (props['disabled:x']) setResizeType('Y')
-      else if (props['disabled:y']) setResizeType('X')
+      if (props.disabled || (props['disabledX'] && props['disabledY'])) return
+      if (props['disabledX']) setResizeType('Y')
+      else if (props['disabledY']) setResizeType('X')
       else setResizeType('XY')
     } else if (event.type === 'mouseup' || event.type === 'mouseleave') {
       setResizeType(undefined)
@@ -66,7 +66,7 @@ export function Resizable(props: ResizableProps) {
       style={props.style}
     >
       {props.children}
-      {!props['disabled:x'] && !props.disabled && (
+      {!props['disabledX'] && !props.disabled && (
         <div
           className={classnames([
             styles.dragBorderX,
@@ -75,7 +75,7 @@ export function Resizable(props: ResizableProps) {
           onMouseDown={handleMouse}
         ></div>
       )}
-      {!props['disabled:y'] && !props.disabled && (
+      {!props['disabledY'] && !props.disabled && (
         <div
           className={classnames([
             styles.dragBorderY,

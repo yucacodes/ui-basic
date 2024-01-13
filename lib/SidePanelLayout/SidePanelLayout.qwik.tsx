@@ -13,8 +13,11 @@ import {
   useTask$,
 } from '@builder.io/qwik'
 import { useLocation } from '@builder.io/qwik-city'
+import { sidePanelSideFlagsOptions } from '../SidePanel/SidePanel.common'
+import { SidePanel } from '../SidePanel/SidePanel.qwik'
+import { selectedFlag } from '../Theme/selectedFlag'
+import { CSidePanelLayoutProps } from './SidePanelLayout.common'
 import styles from './SidePanelLayout.module.css'
-import { Resizable } from '../Resizable/Resizable.qwik'
 
 const toogleElementId = 'yucacodes-ui-sidePanelLayout-toogleButton'
 
@@ -28,7 +31,7 @@ export const sidePanelLayoutContext =
 
 // ---------------------  Side Panel Layout --------------------------
 
-export interface SidePanelLayoutProps {
+export interface SidePanelLayoutProps extends CSidePanelLayoutProps {
   class?: ClassList
 }
 
@@ -37,6 +40,7 @@ export const SidePanelLayout = component$((props: SidePanelLayoutProps) => {
     openPanel: false,
   })
   useContextProvider(sidePanelLayoutContext, contextState)
+  const side = selectedFlag(props, sidePanelSideFlagsOptions)
 
   const mainRef = useSignal<HTMLElement>()
   const onDragSig = useSignal<boolean>(false)
@@ -61,15 +65,22 @@ export const SidePanelLayout = component$((props: SidePanelLayoutProps) => {
 
   return (
     <div
-      class={[styles.root, props.class, onDragSig.value && styles.onDrag]}
+      class={[
+        styles.root,
+        props.class,
+        onDragSig.value && styles.onDrag,
+        styles[side ?? 'left'],
+      ]}
       onClick$={handleRootClick}
     >
-      <Resizable
-        disabled:y
-        class={[styles.sidePanel, contextState.openPanel && styles.open]}
+      <SidePanel
+        staticOnPc
+        open={contextState.openPanel}
+        left={props.left}
+        right={props.right}
       >
         <Slot name="panel" />
-      </Resizable>
+      </SidePanel>
       <div class={styles.main} ref={mainRef}>
         <Slot />
       </div>

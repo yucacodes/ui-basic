@@ -22,7 +22,7 @@ import { component$ } from '@builder.io/qwik'
 
 export const ResizableDocs = component$(() => {
   return (
-    <article style={{ padding: '1rem' }}>
+    <article style={{padding: "1rem 0.8rem 3rem 0.8rem"}}>
       <header>
         <h1>Resizable</h1>
         <p>

@@ -11,17 +11,22 @@ const Example = () => {
 
   const [open, setOpen] = useState(false)
 
-  const toggle = () => { setOpen(open => !open) }
+  const toggle = () => {setOpen(open => !open)}
 
   return (
     <Container relative fullSize textRight
-      style={{ "--side-panel-width": "50%" } as any}
+      style={{ 
+        "--side-panel-width": "50%" 
+      } as any}
     >
       <SidePanel open={open}>
         <Container textCenter> Hi ! </Container>
       </SidePanel>
 
-      <Button style={{ margin: "1rem" }} onClick={toggle}>
+      <Button 
+        style={{ margin: "1rem" }} 
+        onClick={toggle}
+      >
         Toogle
       </Button>
     </Container>

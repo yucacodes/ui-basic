@@ -15,7 +15,7 @@ import { component$ } from '@builder.io/qwik'
 
 export const AccordionDocs = component$(() => {
   return (
-    <article style={{ padding: '1rem' }}>
+    <article style={{padding: "1rem 0.8rem 3rem 0.8rem"}}>
       <header>
         <h1>Accordion</h1>
         <p>

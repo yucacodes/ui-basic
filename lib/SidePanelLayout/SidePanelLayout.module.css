@@ -2,6 +2,7 @@
   height: 100lvh;
   display: flex;
   position: relative;
+  max-width: 100%;
 }
 
 .root.left {
@@ -14,4 +15,5 @@
 
 .main {
   flex-grow: 1;
+  max-width: 100%;
 }

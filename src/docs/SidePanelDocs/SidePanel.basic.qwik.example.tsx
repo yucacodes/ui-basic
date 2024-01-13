@@ -27,7 +27,10 @@ const Example = component$(() => {
         <Container textCenter> Hi ! </Container>
       </SidePanel>
 
-      <Button style={{ margin: "1rem" }} onClick$={toggle}>
+      <Button 
+        style={{ margin: "1rem" }} 
+        onClick$={toggle}
+      >
         Toogle
       </Button>
     </Container>

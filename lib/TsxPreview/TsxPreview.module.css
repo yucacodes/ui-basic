@@ -4,19 +4,23 @@
   align-items: stretch;
   justify-content: center;
   border: 1px solid #606060;
+  box-sizing: border-box;
   background-color: rgb(235, 246, 250);
   overflow: hidden;
   position: relative;
   border-radius: var(--cod-prev-border-radius, 0);
   --cod-hl-border-radius: 0;
+  max-width: 100%;
 }
 
 .tsxhl {
   flex-grow: 1;
+  overflow: auto;
 }
 
 .preview {
   flex-grow: 1;
+  overflow: auto;
 }
 
 .tsxhl,

@@ -26,7 +26,7 @@ import { component$ } from '@builder.io/qwik'
 
 export const ButtonDocs = component$(() => {
   return (
-    <article style={{padding: "1rem"}}>
+    <article style={{padding: "1rem 0.5rem 3rem 0.5rem"}}>
       <header>
         <h1>Button</h1>
         <p>

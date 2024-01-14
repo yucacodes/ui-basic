@@ -49,7 +49,7 @@ export const SidePanelLayout = component$((props: SidePanelLayoutProps) => {
 
   useTask$(({ track }) => {
     const pathname = track(() => location.url.pathname)
-    console.log({ pathname })
+    // console.log({ pathname })
     mainRef.value?.scrollTo(0, 0)
   })
 

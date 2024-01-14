@@ -25,37 +25,12 @@ const docsConfig = defineConfig(() => {
   }
 })
 
-// const docsConfig = defineConfig({
-//   plugins: [react()],
-//   resolve: {
-//     alias: [
-//       {
-//         find: '@lib',
-//         replacement: fileURLToPath(new URL('./lib/main.react', import.meta.url)),
-//       },
-//     ],
-//   },
-//   build: {
-//     rollupOptions: {
-//       output: {
-//         manualChunks: (moduleId) => {
-//           if (
-//             moduleId.includes('node_modules') &&
-//             moduleId.includes('react-syntax-highlighter')
-//           )
-//             return 'react-syntax-highlighter'
-//         },
-//       },
-//     },
-//   },
-// })
-
-const reactLibConfig = defineConfig({
+const reactLibConfig = defineConfig(() => ({
   build: {
     copyPublicDir: false,
     lib: {
       entry: './lib/main.react.ts',
-      formats: ['es'],
+      formats: ['es' as const],
     },
     rollupOptions: {
       external: ['react', 'react/jsx-runtime'],
@@ -76,16 +51,16 @@ const reactLibConfig = defineConfig({
     },
   },
   plugins: [
-    react(),
+    react() as any,
     libInjectCss(),
     dts({
       include: ['lib'],
       exclude: ['lib/**/*.{qwik.ts,qwik.tsx}', 'lib/vite-env.d.ts'],
     }),
   ],
-})
+}))
 
-const libQwikConfig = defineConfig({
+const libQwikConfig = defineConfig(() => ({
   build: {
     target: 'es2020',
     lib: {
@@ -104,7 +79,7 @@ const libQwikConfig = defineConfig({
       rollupTypes: true,
     }),
   ],
-})
+}))
 
 const exportConfig = (() => {
   switch (process.env.VITE_BUILD_MODE) {

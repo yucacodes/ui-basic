@@ -6,18 +6,19 @@
   "qwik": "./dist/main.qwik.mjs",
   "types": "./dist/main.d.ts",
   "scripts": {
-    "dev": "vite --mode ssr",
-    "build:docs": "qwik build",
-    "build:lib.react": "tsc --p ./tsconfig.lib.json  && VITE_BUILD_MODE=lib-react vite build --mode lib",
-    "build:lib.qwik": "tsc --p ./tsconfig.lib.json  && VITE_BUILD_MODE=lib-qwik vite build --mode lib",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/bun/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
+    "build:docs": "qwik build",
+    "build:lib.qwik": "tsc --p ./tsconfig.lib.json  && VITE_BUILD_MODE=lib-qwik vite build --mode lib",
+    "build:lib.react": "tsc --p ./tsconfig.lib.json  && VITE_BUILD_MODE=lib-react vite build --mode lib",
+    "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
-    "preview:docs": "qwik build preview && vite preview --open"
+    "preview:docs": "qwik build preview && vite preview --open",
+    "serve": "bun server/entry.bun.js"
   },
   "devDependencies": {
     "@types/bun": "^1.0.0",
@@ -30,6 +31,7 @@
     "vite": "^5.0.11",
     "vite-plugin-dts": "^3.7.0",
     "vite-plugin-lib-inject-css": "^1.3.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
     "vite-tsconfig-paths": "^4.2.3"
   },
   "dependencies": {
@@ -38,6 +40,7 @@
     "@fontsource/ibm-plex-sans": "^5.0.18",
     "@fontsource/lato": "^5.0.18",
     "@qwikest/icons": "^0.0.13",
+    "classnames": "^2.5.1",
     "highlight.js": "^11.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

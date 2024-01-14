@@ -1,0 +1,21 @@
+/* styles.module.css */
+.custom {
+  /* Custom buttons style */
+  --btn-font-weight: bold;
+  --btn-font-size: 1.2rem;
+  --btn-padding: 0.1em;
+  --btn-text-padding: 0.8em 0.6em;
+  --btn-border-radius: 0;
+  --btn-border-width: 0.3em;
+
+  --btn-disabled-color: white;
+  --btn-disabled-color-contrast: gray;
+
+  /* Custom theme colors */
+  --warning-color: #d76c6c;
+  --warning-color-rgb: 215, 108, 108;
+  --warning-color-contrast: #ffffff;
+
+  --shadow-color: #f01010;
+  --shadow-color-rgb: 240, 16, 16;
+}

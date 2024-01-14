@@ -22,18 +22,22 @@ import controlsExampleCode from './Button.controls.example.tsx?raw'
 
 import sizeExampleNode from './Button.size.example'
 import sizeExampleCode from './Button.size.example.tsx?raw'
+
+import cssVariablesExampleNode from './Button.cssVariables.example.tsx/Button.cssVariables.example'
+import cssVariablesExampleCode from './Button.cssVariables.example.tsx/Button.cssVariables.example.tsx?raw'
+import cssVariablesExampleCssCode from './Button.cssVariables.example.tsx/styles.module.css?raw'
+
 import { component$ } from '@builder.io/qwik'
 
 export const ButtonDocs = component$(() => {
   return (
-    <article style={{padding: "1rem 0.8rem 3rem 0.8rem"}}>
+    <article style={{ padding: '1rem 0.8rem 3rem 0.8rem' }}>
       <header>
         <h1>Button</h1>
         <p>
           Full reusable and deep customizable (With CSS variables) Button
-          component.
-          Require zero initial configuration, but is easily integrable with an
-          app theme.
+          component. Require zero initial configuration, but is easily
+          integrable with an app theme.
         </p>
       </header>
       <section>
@@ -109,6 +113,21 @@ export const ButtonDocs = component$(() => {
         </p>
         <figure>
           <TsxPreview code={sizeExampleCode}>{sizeExampleNode}</TsxPreview>
+        </figure>
+      </section>
+      <section>
+        <h2>CSS Variables</h2>
+        <p>
+          Button component allows customization using css variables. 
+          In the following example we define a customization for all the buttons in a div
+        </p>
+        <figure>
+          <TsxHighLight code={cssVariablesExampleCssCode} />
+        </figure>
+        <figure>
+          <TsxPreview code={cssVariablesExampleCode}>
+            {cssVariablesExampleNode}
+          </TsxPreview>
         </figure>
       </section>
     </article>

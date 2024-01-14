@@ -15,10 +15,7 @@ COPY . /app
 FROM app as build-front
 RUN bun run build:docs
 
-FROM base as front
-COPY --from=build-front app/dist /app/dist
-COPY --from=build-front app/server /app/server
-WORKDIR app
-ENV PORT 3000
-EXPOSE 3000
-CMD ["bun", "server/entry.bun.js"]
+FROM nginx as front
+COPY --from=build-front app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80

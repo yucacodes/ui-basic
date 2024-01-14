@@ -23,7 +23,12 @@ export default component$(() => {
       <HeaderLayout hideHeaderOnPc>
         <header
           q:slot="header"
-          style={{ padding: '0.2rem', display: 'flex', alignItems: 'center' }}
+          style={{
+            padding: '0.2rem',
+            display: 'flex',
+            alignItems: 'center',
+            height: '100%',
+          }}
         >
           <ToogleSidePanel>
             <Button black text>

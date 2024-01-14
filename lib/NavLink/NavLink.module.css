@@ -1,10 +1,12 @@
 .root {
+  --ripple-color: var(--nav-link-color, var(--primary-color, #9e60f0));
   padding: var(--nav-link-padding, 0.5rem 1rem);
-  transition: background-color 0.3s ease,color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   text-decoration: none;
   position: relative;
   overflow: hidden;
-  --ripple-color: var(--nav-link-color, var(--primary-color, #9e60f0))
+  border-radius: var(--nav-link-border-radius, 0.5rem);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .root:focus {
@@ -23,5 +25,5 @@
     var(--nav-link-color-rgb, var(--primary-color-rgb, 158, 96, 240)),
     0.7
   );
-  color: var(--nav-link-color-contrast, var(--primary-color-contrast, #ffffff))
+  color: var(--nav-link-color-contrast, var(--primary-color-contrast, #ffffff));
 }

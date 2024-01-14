@@ -8,7 +8,7 @@
   "scripts": {
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
-    "build.server": "vite build -c adapters/docker /vite.config.ts",
+    "build.server": "vite build -c adapters/static/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
     "build:docs": "qwik build",
     "build:lib.qwik": "tsc --p ./tsconfig.lib.json  && VITE_BUILD_MODE=lib-qwik vite build --mode lib",

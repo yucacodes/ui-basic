@@ -10,6 +10,9 @@ import {
   ToogleSidePanel,
 } from '@yucacodes/ui-qwik'
 
+import "@fontsource/ibm-plex-sans/latin-400.css"
+import "@fontsource/lato/latin-400.css"
+
 export default component$(() => {
   return (
     <SidePanelLayout left>

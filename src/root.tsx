@@ -8,8 +8,6 @@ import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
 import "./theme.css";
-import "@fontsource/ibm-plex-sans"
-import "@fontsource/lato"
 
 export default component$(() => {
   /**

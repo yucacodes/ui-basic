@@ -18,5 +18,5 @@ export interface CButtonProps extends ColorFlags, ButtonVariantFlags {
   type?: 'submit' | 'button' | 'reset'
   disabled?: boolean
   loading?: boolean
-  size?: number
+  size?: string
 }

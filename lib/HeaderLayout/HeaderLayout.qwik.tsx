@@ -20,9 +20,9 @@ export const HeaderLayout = component$((props: HeaderLayoutProps) => {
       <div class={[styles.header]}>
         <Slot name="header" />
       </div>
-      <div class={styles.main}>
+      <main class={styles.main}>
         <Slot />
-      </div>
+      </main>
     </div>
   )
 })

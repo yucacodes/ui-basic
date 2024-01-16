@@ -7,6 +7,7 @@ import {
   NavLink,
   SideNav,
   SidePanelLayout,
+  SubTitle,
   ToogleSidePanel,
 } from '@yucacodes/ui-qwik'
 
@@ -22,6 +23,8 @@ export default component$(() => {
         <NavLink href="/tabs-manager/">TabsManager</NavLink>
         <NavLink href="/resizable/">Resizable</NavLink>
         <NavLink href="/side-panel/">SidePanel</NavLink>
+        <SubTitle>Layouts</SubTitle>
+        <NavLink href="/header-layout/">header layout</NavLink>
       </SideNav>
       <HeaderLayout hideHeaderOnPc>
         <header

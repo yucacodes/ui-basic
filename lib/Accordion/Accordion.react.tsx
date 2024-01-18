@@ -5,10 +5,10 @@ import type { CSSProperties, MouseEventHandler, ReactNode } from 'react'
 import { colorFlagsOptions } from '../Theme/ColorFlags'
 import { customColorVariables } from '../Theme/customColorVariables'
 import { selectedFlag } from '../Theme/selectedFlag'
-import { CButtonProps, buttonVariantFlagsOptions } from './Accordion.common'
+import { CAccordionProps, buttonVariantFlagsOptions } from './Accordion.common'
 import styles from './Accordion.module.css'
 
-export interface AccordionProps extends CButtonProps {
+export interface AccordionProps extends CAccordionProps {
   style?: CSSProperties
   children?: ReactNode
   className?: string

@@ -1,0 +1,15 @@
+
+.sumary summary {
+	list-style: none;
+}
+
+.sumary summary::-webkit-details-marker {
+	display: none;
+}
+
+.sumary summary {
+	padding: .75em 1em;
+	cursor: pointer;
+	position: relative;
+	padding-left: calc(1.75rem + .75rem + .75rem);
+}

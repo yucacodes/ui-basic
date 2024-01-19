@@ -11,16 +11,7 @@ export default ( // __EXCLUDE__
       flexDirection: "column"
     }}> {/*__EXCLUDE__*/}
     <Accordion
-      title={
-        <span style={{
-          fontSize: '1rem',
-          fontWeight: 'bold'
-        }}
-          q:slot="title">
-          Test Accordion
-        </span>
-      }>
-
+      title={'Test Accordion'}>
       <p
         style={{
           paddingLeft: '3rem'
@@ -28,16 +19,6 @@ export default ( // __EXCLUDE__
         Teste es un test de accordion
       </p>
 
-    </Accordion>
-    <Accordion open
-      title={<span>Test Accordion 2</span>}>
-
-      <p
-        style={{
-          paddingLeft: '3rem'
-        }}>
-        Teste es un test de accordion 2
-      </p>
     </Accordion>
 
   </section> // __EXCLUDE__

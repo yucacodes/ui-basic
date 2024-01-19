@@ -6,18 +6,20 @@
   max-width: 500px;
 	margin-left: auto;
 	margin-right: auto;
+  background-color: var(--accordion-bg-color);
+  border-radius: var(--btn-border-radius, 0.5em);
+}
+
+.shadow{
+  box-shadow: 0em 0.1em 0.3em 0em var(--shadow-color, rgba(0, 0, 0, 0.4));
 }
 
 details[open] summary {
-	background-color: var(--accordion-bg-color);
+	background-color: var(--sumary-bg-color);
 }
 
 summary:hover {
-	background-color:var(--accordion-bg-color);
-}
-
-summary {
-	list-style: none;
+	background-color:var(--sumary-bg-color);
 }
 
 summary::-webkit-details-marker {
@@ -25,6 +27,8 @@ summary::-webkit-details-marker {
 }
 
 summary {
+  background-color: var(--sumary-bg-color);
+	list-style: none;
 	padding: .75em 1em;
 	cursor: pointer;
 	position: relative;
@@ -37,8 +41,10 @@ summary {
 
 .primary {
   --accordion-bg-alpha: 0.3;
-  --accordion-bg-color: rgba( var(--primary-color-rgb, 158, 96, 240), var(--accordion-bg-alpha, 0.3) );
-  --accordion-color-contrast: var(--primary-color-contrast, #ffffff);
+  --sumary-bg-color: var(--accordion-bg-primary-color, #9368f7);
+  --accordion-bg-color: var(--primary-color, #ffffff);
+  --accordion-bg-color-rgb: var(--primary-color-rgb, 238, 238, 238);
+  --accordion-color-contrast: var(--primary-color-contrast, #eeeeee);
 }
 
 .secondary {

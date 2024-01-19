@@ -6,8 +6,6 @@
   max-width: 600px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 5rem;
-	margin-bottom: 5rem;
 }
 
 details + details {
@@ -27,6 +25,23 @@ details[open] summary {
 summary:hover {
 	background-color:var(--accordion-color);
 }
+
+
+summary {
+	list-style: none;
+}
+
+summary::-webkit-details-marker {
+	display: none;
+}
+
+summary {
+	padding: .75em 1em;
+	cursor: pointer;
+	position: relative;
+	padding-left: calc(1.75rem + .75rem + .75rem);
+}
+
 
 
 /* Colors */

@@ -3,7 +3,6 @@
 import {
   CSSProperties,
   ClassList,
-  PropFunction,
   Slot,
   component$
 } from '@builder.io/qwik'
@@ -15,24 +14,31 @@ import styles from './Accordion.module.css'
 export interface AccordionProps extends CAccordionProps {
   class?: ClassList
   style?: CSSProperties
-  onClick$?: PropFunction<
-    (event: PointerEvent, element: HTMLButtonElement) => any
-  >
+  open: boolean
 }
 
 export const Accordion = component$(
-  ({ color, ...props }: AccordionProps) => {
+  ({ color, open, ...props }: AccordionProps) => {
 
     const themeColor = selectedFlag(props, colorFlagsOptions)
 
+    let opened = false
+    if (open) {
+      opened = true
+    }
 
     return (
-      <section class={[
-        props.class,
+      <details open={opened}
+      class={[
         styles.accordion,
-        styles[themeColor ?? 'primary'],]}>
+        props.class,
+        styles[themeColor ?? 'primary'],
+      ]}>
+        <summary> 
+         <Slot name="title"></Slot>    
+        </summary>
         <Slot />
-      </section>
+      </details>
     )
   },
 )

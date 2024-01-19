@@ -14,7 +14,7 @@ import styles from './Accordion.module.css'
 export interface AccordionProps extends CAccordionProps {
   class?: ClassList
   style?: CSSProperties
-  open: boolean
+  open?: boolean
 }
 
 export const Accordion = component$(

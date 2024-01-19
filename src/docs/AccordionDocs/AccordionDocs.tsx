@@ -11,6 +11,9 @@ import {
 import basicExampleNode from './Accordion.basic.example'
 import basicExampleCode from './Accordion.basic.example.tsx?raw'
 
+import basicReactExampleNode  from './Accordion.basic.example.react'
+import basicReactExampleCode from './Accordion.basic.example.react.tsx?raw'
+
 import { component$ } from '@builder.io/qwik'
 
 export const AccordionDocs = component$(() => {
@@ -47,9 +50,25 @@ export const AccordionDocs = component$(() => {
       <section>
         <h2>Basic Usage</h2>
         <p>Simply set open prop</p>
-        <figure>
+        <TabsManager>
+            <TabList>
+              <Tab> React </Tab>
+              <Tab> Qwik </Tab>
+            </TabList>
+            <TabPanelList>
+              <TabPanel>
+              <figure>
+          <TsxPreview code={basicReactExampleCode}>{basicReactExampleNode}</TsxPreview>
+        </figure>
+              </TabPanel>
+              <TabPanel>
+              <figure>
           <TsxPreview code={basicExampleCode}>{basicExampleNode}</TsxPreview>
         </figure>
+              </TabPanel>
+            </TabPanelList>
+          </TabsManager>
+        
       </section>
       <br />
     </article>

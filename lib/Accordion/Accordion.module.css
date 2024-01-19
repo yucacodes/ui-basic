@@ -2,30 +2,19 @@
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
-	min-width: 600px;
-  max-width: 600px;
+	min-width: 300px;
+  max-width: 500px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-details + details {
-	margin-top: .5rem;
-}
-
-details * {
-	padding: .5em;
-}
-
-
 details[open] summary {
-	background-color: var(--accordion-color);
+	background-color: var(--accordion-bg-color);
 }
-
 
 summary:hover {
-	background-color:var(--accordion-color);
+	background-color:var(--accordion-bg-color);
 }
-
 
 summary {
 	list-style: none;
@@ -47,8 +36,8 @@ summary {
 /* Colors */
 
 .primary {
-  --accordion-color: var(--primary-color, #9e60f02B);
-  --accordion-color-rgb: var(--primary-color-rgb, 158, 96, 240);
+  --accordion-bg-alpha: 0.3;
+  --accordion-bg-color: rgba( var(--primary-color-rgb, 158, 96, 240), var(--accordion-bg-alpha, 0.3) );
   --accordion-color-contrast: var(--primary-color-contrast, #ffffff);
 }
 

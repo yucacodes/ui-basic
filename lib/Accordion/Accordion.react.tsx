@@ -1,46 +1,36 @@
 /** @jsxImportSource react */
 
-import classNames from 'classnames'
-import type { CSSProperties, MouseEventHandler, ReactNode } from 'react'
-import { colorFlagsOptions } from '../Theme/ColorFlags'
-import { customColorVariables } from '../Theme/customColorVariables'
-import { selectedFlag } from '../Theme/selectedFlag'
-import { CAccordionProps, buttonVariantFlagsOptions } from './Accordion.common'
-import styles from './Accordion.module.css'
+import type { CSSProperties, ReactNode } from 'react'
+import { CAccordionProps } from './Accordion.common'
 
 export interface AccordionProps extends CAccordionProps {
   style?: CSSProperties
   children?: ReactNode
   className?: string
-  onClick?: MouseEventHandler<HTMLButtonElement>
+  title?: string | ReactNode
+  open?: boolean
 }
 
 export const Accordion = ({
   children,
-  color,
-  loading,
+  title,
   className,
   ...props
 }: AccordionProps) => {
-  const variant = selectedFlag(props, buttonVariantFlagsOptions)
-  const themeColor = selectedFlag(props, colorFlagsOptions)
-  const colorVariables = customColorVariables('btn', color)
+
+  const opened = props.open ?? false
 
   return (
-    <button
-      type={props.type}
-      disabled={props.disabled}
-      style={{ ...colorVariables, fontSize: props.size, ...props.style }}
-      onClick={props.onClick}
-      className={classNames(
-        className,
-        styles['button'],
-        styles[themeColor ?? 'primary'],
-        styles[variant ?? 'contained'],
-        loading && styles['loading'],
-      )}
-    >
+    <details open={opened}
+      style={{
+        ...props.style,
+      }}>
+      <summary>
+        {
+          title && title
+        }
+      </summary>
       {children}
-    </button>
+    </details>
   )
 }

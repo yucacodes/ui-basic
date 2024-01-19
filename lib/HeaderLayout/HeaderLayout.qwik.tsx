@@ -8,13 +8,17 @@ export interface HeaderLayoutProps {
   class?: ClassList
 }
 
-export const HeaderLayout = component$((props: HeaderLayoutProps) => {
+export const HeaderLayout = component$(({
+  hideHeaderOnPc, ...props }: HeaderLayoutProps) => {
+
+    let  isHideHeaderOnPc = hideHeaderOnPc ?? false
+
   return (
-    <div
+    <header
       class={[
         props.class,
         styles.root,
-        props.hideHeaderOnPc && styles.hideOnPc,
+        isHideHeaderOnPc && styles.hideOnPc,
       ]}
     >
       <div class={[styles.header]}>
@@ -23,6 +27,6 @@ export const HeaderLayout = component$((props: HeaderLayoutProps) => {
       <main class={styles.main}>
         <Slot />
       </main>
-    </div>
+    </header>
   )
 })

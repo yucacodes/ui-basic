@@ -58,7 +58,7 @@ export const AccordionDocs = component$(() => {
             <TabPanelList>
               <TabPanel>
               <figure>
-          <TsxPreview code={basicReactExampleCode}>{basicReactExampleNode}</TsxPreview>
+          <TsxPreview code={basicReactExampleCode}>{basicExampleNode}</TsxPreview>
         </figure>
               </TabPanel>
               <TabPanel>

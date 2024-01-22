@@ -8,34 +8,31 @@ export interface AccordionReactProps extends CAccordionProps {
   style?: CSSProperties
   children?: ReactNode
   className?: string
-  title?: string 
+  title: string
   open?: boolean
   shadow?: boolean
 }
 
-export const Accordion = ({
-  children,
+export function Accordion({
   title,
   className,
   shadow,
   ...props
-}: AccordionReactProps) => {
-
+}: AccordionReactProps) {
   const opened = props.open ?? false
   let hasShadow = shadow ?? false
 
   return (
-    <details open={opened}
+    <details
+      open={opened}
       style={{
         boxShadow: hasShadow ? styles.shadow : 'none',
         ...props.style,
-      }}>
-      <summary>
-        {
-          title && title
-        }
-      </summary>
-      {children}
+      }}
+      className={className}
+    >
+      <summary>{title}</summary>
+      {props.children}
     </details>
   )
 }

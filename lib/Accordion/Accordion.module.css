@@ -19,7 +19,7 @@ details[open] summary {
 }
 
 summary:hover {
-	background-color:var(--sumary-bg-color);
+	background-color: rgba(var(--sumary-bg-color),var(--accordion-bg-alpha))
 }
 
 summary::-webkit-details-marker {
@@ -40,8 +40,8 @@ summary {
 /* Colors */
 
 .primary {
-  --accordion-bg-alpha: 0.3;
-  --sumary-bg-color: var(--accordion-bg-primary-color, #9368f7);
+  --accordion-bg-alpha: 0.7;
+  --sumary-bg-color: var(--accordion-bg-primary-color, #e4e9ff);
   --accordion-bg-color: var(--primary-color, #ffffff);
   --accordion-bg-color-rgb: var(--primary-color-rgb, 238, 238, 238);
   --accordion-color-contrast: var(--primary-color-contrast, #eeeeee);

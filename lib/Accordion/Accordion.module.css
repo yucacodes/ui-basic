@@ -3,7 +3,6 @@
   overflow: hidden;
   box-sizing: border-box;
 	min-width: 300px;
-  max-width: 500px;
 	margin-left: auto;
 	margin-right: auto;
   background-color: var(--accordion-bg-color);
@@ -16,6 +15,11 @@
 
 details[open] summary {
 	background-color: var(--sumary-bg-color);
+
+  svg{
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
 }
 
 summary:hover {
@@ -29,10 +33,20 @@ summary::-webkit-details-marker {
 summary {
   background-color: var(--sumary-bg-color);
 	list-style: none;
-	padding: .75em 1em;
+	padding: .75em;
 	cursor: pointer;
 	position: relative;
-	padding-left: calc(1.75rem + .75rem + .75rem);
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+
+  svg{
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: transform 0.3s ease;
+  }
 }
 
 

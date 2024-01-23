@@ -10,10 +10,7 @@ export default ( // __EXCLUDE__
       flexDirection: "column"
     }}> {/*__EXCLUDE__*/}
     <Accordion shadow>
-      <span style={{
-        fontSize: '1rem',
-        fontWeight: 'bold'
-      }}
+      <span 
         q:slot="title">
         Test Accordion
       </span>

@@ -9,7 +9,7 @@ export default ( // __EXCLUDE__
       justifyContent: "center",
       flexDirection: "column"
     }}> {/*__EXCLUDE__*/}
-    <Accordion shadow>
+    <Accordion shadow showIcon={false}>
       <span 
         q:slot="title">
         Test Accordion

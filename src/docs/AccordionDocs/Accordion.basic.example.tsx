@@ -9,7 +9,7 @@ export default ( // __EXCLUDE__
       justifyContent: "center",
       flexDirection: "column"
     }}> {/*__EXCLUDE__*/}
-    <Accordion shadow showIcon={false}>
+    <Accordion shadow showIcon={false} name={'test'}>
       <span 
         q:slot="title">
         Test Accordion
@@ -21,7 +21,7 @@ export default ( // __EXCLUDE__
         Teste es un test de accordion
       </p>
     </Accordion>
-    <Accordion open>
+    <Accordion open name={'test'}>
       <span
         q:slot="title">
         Test Accordion 2

@@ -12,6 +12,7 @@ export interface AccordionReactProps extends CAccordionProps {
   open?: boolean
   showIcon?: boolean
   shadow?: boolean
+  name?: string
 }
 
 export function Accordion({
@@ -19,6 +20,7 @@ export function Accordion({
   className,
   shadow,
   showIcon,
+  name,
   ...props
 }: AccordionReactProps) {
   const opened = props.open ?? false
@@ -29,6 +31,7 @@ export function Accordion({
   return (
     <details
       open={opened}
+      name={name ?? undefined}
       style={{
         boxShadow: hasShadow ? styles.shadow : 'none',
         ...props.style,

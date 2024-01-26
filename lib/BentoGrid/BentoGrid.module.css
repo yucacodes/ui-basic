@@ -1,0 +1,18 @@
+:root{
+  /* lib/BentoGrid/BentoGrid.module.css */
+  --bento-grid-columns: 12;
+  --bento-grid-rows: 4;
+  --bento-grid-gap: 0.5rem;
+  /* grid auto rows is set to 150px by default in BentoGrid */
+  --bento-grid-auto-columns: 150px; 
+  --bento-grid-auto-rows: 150px; 
+}
+
+.bentoGrid{
+  display: grid;
+  grid-template-columns: repeat(var(--bento-grid-columns), 1fr);
+  grid-template-rows: repeat(var(--bento-grid-rows), 1fr);
+  gap: var(--bento-grid-gap);
+  grid-auto-rows: var(--bento-grid-auto-rows);
+  grid-auto-columns: var(--bento-grid-auto-columns);
+}

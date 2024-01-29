@@ -49,7 +49,9 @@ export const Accordion = component$(
             </svg>
           }
         </summary>
-        <Slot />
+         <section class={styles.containerSummary}>
+         <Slot />
+         </section>
       </details>
     )
   },

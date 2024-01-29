@@ -3,7 +3,6 @@
 import {
   CSSProperties,
   ClassList,
-  PropFunction,
   Slot,
   component$
 } from '@builder.io/qwik'
@@ -11,13 +10,12 @@ import {
   CSideNavSectionProps
 } from './SideNavSection.common'
 import styles from './SideNavSection.module.css'
+import { Accordion } from '../Accordion/Accordion.qwik'
 
 export interface SideNavSectionProps extends CSideNavSectionProps {
   class?: ClassList
   style?: CSSProperties
-  onClick$?: PropFunction<
-    (event: PointerEvent, element: HTMLButtonElement) => any
-  >
+  collapsed?: boolean
 }
 
 export const SideNavSection = component$(
@@ -25,15 +23,30 @@ export const SideNavSection = component$(
 
 
     return (
-      <h2  class={[
-        props.class,
-        styles.title,
-      ]}>
-        <span class="text-base-content">
-          <Slot name="icon" />
-        </span>{' '}
-        <Slot />
-      </h2>
+      <>
+      {
+        props.collapsed ?
+        <Accordion>
+            <span q:slot="title">
+           <Slot name="title" >
+
+           </Slot>
+            </span>
+          <Slot />
+        </Accordion>
+        :
+        <h2  class={[
+          props.class,
+          styles.title,
+        ]}>
+          <span class="text-base-content">
+            <Slot name="icon" />
+          </span>{' '}
+          <Slot />
+        </h2>
+      }
+      
+      </>
     )
   },
 )

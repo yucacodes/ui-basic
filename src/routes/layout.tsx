@@ -13,13 +13,14 @@ import {
 
 import "@fontsource/ibm-plex-sans/latin-400.css"
 import "@fontsource/lato/latin-400.css"
+import style from './layout.module.css'
 
 export default component$(() => {
   return (
     <SidePanelLayout left>
-      <SideNav q:slot="panel">
+      <SideNav    q:slot="panel">
         <NavLink href="/">Yui</NavLink>
-        <SideNavSection  class="side-nav" collapsed>
+        <SideNavSection  class={style.sideNavSection} collapsed>
           <span
             q:slot="title">
             Componentes

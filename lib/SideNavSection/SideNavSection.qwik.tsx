@@ -11,6 +11,9 @@ import {
 } from './SideNavSection.common'
 import styles from './SideNavSection.module.css'
 import { Accordion } from '../Accordion/Accordion.qwik'
+import { customColorVariables } from '../Theme/customColorVariables'
+import { selectedFlag } from '../Theme/selectedFlag'
+import { colorFlagsOptions } from '../Theme/ColorFlags'
 
 export interface SideNavSectionProps extends CSideNavSectionProps {
   class?: ClassList
@@ -20,13 +23,18 @@ export interface SideNavSectionProps extends CSideNavSectionProps {
 
 export const SideNavSection = component$(
   ({ color, loading, ...props }: SideNavSectionProps) => {
-
-
+    const colorVariables = customColorVariables('accordion', color)
+    const themeColor = selectedFlag(props, colorFlagsOptions)
     return (
       <>
       {
         props.collapsed ?
-        <Accordion>
+        <Accordion
+        style={{ ...colorVariables, ...props.style }}
+        class={[
+          styles[themeColor ?? 'primary'],
+          props.class,
+        ]}>
             <span q:slot="title">
            <Slot name="title" >
 
@@ -35,13 +43,16 @@ export const SideNavSection = component$(
           <Slot />
         </Accordion>
         :
-        <h2  class={[
+        <h2 
+        style={{ ...colorVariables, ...props.style }}
+        class={[
           props.class,
           styles.title,
+          styles[themeColor ?? 'primary'],
         ]}>
           <span class="text-base-content">
             <Slot name="icon" />
-          </span>{' '}
+          </span>
           <Slot />
         </h2>
       }

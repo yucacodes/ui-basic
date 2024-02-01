@@ -1,9 +1,11 @@
+
+
 .title{
   padding: .5rem 1rem;
     font-size: .875rem;
     line-height: 1.25rem;
     font-weight: 600;
-    color: var(--bc);
+    background: var(--sideNavSection-color);
 
     span{
       display: flex;
@@ -27,9 +29,13 @@
   gap: .5rem;
 }
 
+details {
+  background: var(--sideNavSection-color)
+}
+
 
 .primary{
-  --bc: var(--primary-color, #9e60f0/.4);
-  --bc-rgb: var(--primary-color-rgb, 158, 96, 240);
-  --bc-contrast: var(--primary-color-contrast, #ffffff);
+  --sideNavSection-color: var(--primary-color, #9e60f0/.4);
+  --sideNavSection-rgb: var(--primary-color-rgb, 158, 96, 240);
+  --sideNavSection-contrast: var(--primary-color-contrast, #ffffff);
 }

@@ -33,7 +33,7 @@ export const Accordion = component$(
 
     return (
       <details open={opened}
-        name={name ?? undefined}
+        name={name ?? ''}
         class={[
           styles.accordion,
           hasShadow && styles.shadow,

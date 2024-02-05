@@ -6,7 +6,7 @@ import { colorFlagsOptions } from '../Theme/ColorFlags'
 import { customColorVariables } from '../Theme/customColorVariables'
 import { selectedFlag } from '../Theme/selectedFlag'
 import { CSideNavSectionProps, buttonVariantFlagsOptions } from './SideNavSection.common'
-import styles from './Button.module.css'
+import styles from './SideNavSection.module.css'
 
 export interface SideNavSectionProps extends CSideNavSectionProps {
   style?: CSSProperties

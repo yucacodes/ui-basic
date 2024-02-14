@@ -38,6 +38,7 @@ export default component$(() => {
             </Icon>
             Layouts</SideNavSection>
           <NavLink href="/header-layout/">header layout</NavLink>
+          <NavLink href="/bento-grid-layout/">bento grid layout</NavLink>
         </SideNavSection>
       </SideNav>
       <HeaderLayout hideHeaderOnPc>

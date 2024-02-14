@@ -38,10 +38,10 @@ export const CounterDownDocs = component$(() => {
             </TabList>
             <TabPanelList>
               <TabPanel>
-                <TsxHighLight code={`import { Accordion } from '@yucacodes/ui-react'"`} />
+                <TsxHighLight code={`import { CounterDown } from '@yucacodes/ui-react'"`} />
               </TabPanel>
               <TabPanel>
-              <TsxHighLight code={`import { Accordion } from '@yucacodes/ui-qwik'"`} />
+              <TsxHighLight code={`import { CounterDown } from '@yucacodes/ui-qwik'"`} />
               </TabPanel>
             </TabPanelList>
           </TabsManager>
@@ -58,7 +58,7 @@ export const CounterDownDocs = component$(() => {
             <TabPanelList>
               <TabPanel>
               <figure>
-          <TsxPreview code={basicReactExampleCode}>{basicExampleNode}</TsxPreview>
+          <TsxPreview code={basicExampleCode}>{basicExampleNode}</TsxPreview>
         </figure>
               </TabPanel>
               <TabPanel>

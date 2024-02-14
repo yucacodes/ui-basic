@@ -8,19 +8,19 @@ import {
   TsxPreview,
 } from '@yucacodes/ui-qwik'
 
-import basicExampleNode from './Accordion.basic.example'
-import basicExampleCode from './Accordion.basic.example.tsx?raw'
+import basicExampleNode from './CounterDown.example.qwik'
+import basicExampleCode from './CounterDown.example.qwik.tsx?raw'
 
-import basicReactExampleNode  from './Accordion.basic.example.react'
-import basicReactExampleCode from './Accordion.basic.example.react.tsx?raw'
+import basicReactExampleNode  from './CounterDown.example.react.js'
+import basicReactExampleCode from './CounterDown.example.react.tsx?raw'
 
 import { component$ } from '@builder.io/qwik'
 
-export const AccordionDocs = component$(() => {
+export const CounterDownDocs = component$(() => {
   return (
     <article style={{padding: "1rem 0.8rem 3rem 0.8rem"}}>
       <header>
-        <h1>Accordion</h1>
+        <h1>Counter Down</h1>
         <p>
           Full reusable and deep customizable (With CSS variables) Accordion
           component. Require zero initial configuration, but is easily
@@ -38,10 +38,10 @@ export const AccordionDocs = component$(() => {
             </TabList>
             <TabPanelList>
               <TabPanel>
-                <TsxHighLight code={`import { Accordion } from '@yucacodes/ui-react'"`} />
+                <TsxHighLight code={`import { CounterDown } from '@yucacodes/ui-react'"`} />
               </TabPanel>
               <TabPanel>
-              <TsxHighLight code={`import { Accordion } from '@yucacodes/ui-qwik'"`} />
+              <TsxHighLight code={`import { CounterDown } from '@yucacodes/ui-qwik'"`} />
               </TabPanel>
             </TabPanelList>
           </TabsManager>
@@ -58,7 +58,7 @@ export const AccordionDocs = component$(() => {
             <TabPanelList>
               <TabPanel>
               <figure>
-          <TsxPreview code={basicReactExampleCode}>{basicExampleNode}</TsxPreview>
+          <TsxPreview code={basicExampleCode}>{basicExampleNode}</TsxPreview>
         </figure>
               </TabPanel>
               <TabPanel>

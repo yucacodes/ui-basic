@@ -3,7 +3,7 @@ import { Container, Accordion } from '@yucacodes/ui-qwik'; // __EXCLUDE__
 export default ( // __EXCLUDE__
   <Container relative fullSize style={{ display: 'flex', gap: '1rem', alignItems: "center", justifyContent: "center", flexDirection: "column" }}>  {/*__EXCLUDE__*/}
    
-    <Accordion shadow showIcon={false}>
+    <Accordion>
       <span 
         q:slot="title">
         Test Accordion

@@ -14,14 +14,6 @@ export default ( // __EXCLUDE__
     </p>
   </Accordion>
 
-  <Accordion title='Test Accordion 2'>
-    <p
-      style={{
-        paddingLeft: '3rem'
-      }}>
-      Teste es un test de accordion 2
-    </p>
-  </Accordion>
 </>
   </div> // __EXCLUDE__
 ) // __EXCLUDE__

@@ -53,15 +53,16 @@ export const SidePanelLayout = component$((props: SidePanelLayoutProps) => {
     mainRef.value?.scrollTo(0, 0)
   })
 
-  const handleRootClick = $((event: MouseEvent) => {
+  const handleRootClick = $((event: MouseEvent) => {    
     if (
       !(event.target as HTMLElement)?.matches(
-        `#${toogleElementId},#${toogleElementId} *`,
+        `#${toogleElementId},#${toogleElementId} button, details > summary, details > summary span`,
       )
     ) {
       contextState.openPanel = false
     }
   })
+
 
   return (
     <div
@@ -71,6 +72,7 @@ export const SidePanelLayout = component$((props: SidePanelLayoutProps) => {
         onDragSig.value && styles.onDrag,
         styles[side ?? 'left'],
       ]}
+   
       onClick$={handleRootClick}
     >
       <SidePanel
@@ -78,10 +80,11 @@ export const SidePanelLayout = component$((props: SidePanelLayoutProps) => {
         open={contextState.openPanel}
         left={props.left}
         right={props.right}
+       
       >
         <Slot name="panel" />
       </SidePanel>
-      <div class={styles.main} ref={mainRef}>
+      <div  class={styles.main} ref={mainRef}>
         <Slot />
       </div>
     </div>

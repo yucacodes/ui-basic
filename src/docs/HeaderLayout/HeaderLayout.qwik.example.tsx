@@ -9,7 +9,7 @@ const Example = component$(() => {
 
   return (
     <Container  relative fullSize>
-      <HeaderLayout >
+      <HeaderLayout  hideHeaderOnPc={false}>
          <header q:slot="header"> Nav </header>
          <main> Content </main>
       </HeaderLayout>

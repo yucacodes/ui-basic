@@ -1,0 +1,59 @@
+.root{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    --font-size-counterdown: var(--font-size-counterdown, 1rem);
+    --font-line-height-counterdown: var(--font-line-height-counterdown, 1.25rem);
+}
+
+.counterdown{
+    font-size: var(--font-size-counterdown);
+    line-height: var(--font-line-height-counterdown);
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.clock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+
+}
+
+.clock .titleCount,
+.clock .count{
+    font-family: monospace;
+    font-size: var(--font-size-counterdown, 2rem);
+    line-height: var(--font-line-height-counterdown, 2.25rem);
+    font-weight: 600;
+    color: #6b7280;
+}
+
+
+.countdown{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+
+}
+
+.countdown .count{
+    font-family: monospace;
+    font-size: var(--font-size-counterdown, 3rem);
+    line-height: var(--font-line-height-counterdown);
+    font-weight: 600;
+}
+
+.countdown .titleCount{
+    font-size: var(--font-size-counterdown);
+    line-height: var(--font-line-height-counterdown);
+    font-weight: 600;
+    color: #6b7280;
+
+}

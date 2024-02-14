@@ -1,0 +1,110 @@
+.accordion {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+	min-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+  background-color: var(--accordion-bg-color);
+  border-radius: var(--btn-border-radius, 0.5em);
+}
+
+.shadow{
+  box-shadow: 0em 0.1em 0.3em 0em var(--shadow-color, rgba(0, 0, 0, 0.4));
+}
+
+details[open] summary {
+  background-color: var( --sumary-bg-color-contrast);
+
+  
+  svg{
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+}
+
+summary:hover {
+	background-color: var( --sumary-bg-color-contrast)
+}
+
+summary::-webkit-details-marker {
+	display: none;
+}
+
+summary {
+  background-color: var(--sumary-bg-color);
+	list-style: none;
+	padding: .75em;
+	cursor: pointer;
+	position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+
+
+
+
+  svg{
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+}
+
+.containerSummary {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.5em;
+  padding: .75em;
+  position: relative;
+
+  a{
+    width: 88%;
+  }
+}
+
+/* Colors */
+
+.primary {
+  --accordion-bg-alpha: 0.7;
+  --sumary-bg-color: var(--accordion-bg-primary-color, #c4cfff);
+  --sumary-bg-color-contrast: var(--accordion-bg-primary-color, #768fff);
+  --accordion-bg-color: var(--primary-color, #ffffff);
+  --accordion-bg-color-rgb: var(--primary-color-rgb, 238, 238, 238);
+  --accordion-color-contrast: var(--primary-color-contrast, #eeeeee);
+}
+
+.secondary {
+  --accordion-color: var(--secondary-color, #05c77d);
+  --accordion-color-rgb: var(--secondary-color-rgb, 5, 199, 125);
+  --accordion-color-contrast: var(--secondary-color-contrast, #ffffff);
+}
+
+.warning {
+  --accordion-color: var(--warning-color, #f0b000);
+  --accordion-color-rgb: var(--warning-color-rgb, 240, 176, 0);
+  --accordion-color-contrast: var(--warning-color-contrast, #ffffff);
+}
+
+.danger {
+  --accordion-color: var(--danger-color, #f01010);
+  --accordion-color-rgb: var(--danger-color-rgb, 240, 16, 16);
+  --accordion-color-contrast: var(--danger-color-contrast, #ffffff);
+}
+
+.black {
+  --accordion-color: var(--color-black, #303030);
+  --accordion-color-rgb: var(--color-black-rgb, 48, 48, 48);
+  --accordion-color-contrast: var(--color-black-contrast, #ffffff);
+}
+
+.white {
+  --accordion-color: var(--color-white, #ffffff);
+  --accordion-color-rgb: var(--color-white-rgb, 255, 255, 255);
+  --accordion-color-contrast: var(--color-white-contrast, #303030);
+
+}

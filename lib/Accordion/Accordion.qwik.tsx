@@ -17,11 +17,10 @@ export interface AccordionProps extends CAccordionProps {
   open?: boolean
   shadow?: boolean
   showIcon?: boolean
-  name?: string
 }
 
 export const Accordion = component$(
-  ({ color, open, shadow, showIcon, name, ...props }: AccordionProps) => {
+  ({ color, open, shadow, showIcon, ...props }: AccordionProps) => {
 
     const themeColor = selectedFlag(props, colorFlagsOptions)
 
@@ -33,7 +32,6 @@ export const Accordion = component$(
 
     return (
       <details open={opened}
-        name={name ?? ''}
         class={[
           styles.accordion,
           hasShadow && styles.shadow,

@@ -30,6 +30,7 @@ export default component$(() => {
           <NavLink href="/tabs-manager/">TabsManager</NavLink>
           <NavLink href="/resizable/">Resizable</NavLink>
           <NavLink href="/side-panel/">SidePanel</NavLink>
+          <NavLink href="/counter-down/">Counter down</NavLink>
           <SideNavSection>
             <Icon
               q:slot='icon'

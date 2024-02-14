@@ -1,6 +1,7 @@
 export * from './Accordion/Accordion.react'
 export * from './Button/Button.react'
 export * from './Container/Container.react'
+export * from './CounterDown/CounterDown.react'
 export * from './Resizable/Resizable.react'
 export * from './SideNavSection/SideNavSection.react'
 export * from './SidePanel/SidePanel.react'

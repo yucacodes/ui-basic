@@ -54,9 +54,13 @@ export const SidePanelLayout = component$((props: SidePanelLayoutProps) => {
   })
 
   const handleRootClick = $((event: MouseEvent) => {    
+
     if (
       !(event.target as HTMLElement)?.matches(
-        `#${toogleElementId},#${toogleElementId} button, details > summary, details > summary span`,
+        `#${toogleElementId}, #${toogleElementId} *`,
+      ) &&  !(event.target as HTMLElement)?.matches(
+        `details > summary *`,
+
       )
     ) {
       contextState.openPanel = false

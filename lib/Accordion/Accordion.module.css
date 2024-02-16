@@ -15,6 +15,7 @@
 
 details[open] summary {
   background-color: var( --sumary-bg-color-contrast);
+  border-radius: var(--btn-border-radius, 0.5em);
 
   
   svg{

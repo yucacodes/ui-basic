@@ -43,6 +43,7 @@ export const CounterDown = component$(({ beerTime, started = true, ...props }: C
     track(() => seconds.value)
     track(() => now.value)
     track(() => started)
+    track(() => beerTimed.value)
 
     if (started) {
        interval.value = setInterval(() => {

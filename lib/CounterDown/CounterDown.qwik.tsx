@@ -21,12 +21,12 @@ export interface CounterDownProps extends CCounterDownProps {
   started?: boolean
 }
 
-export const CounterDown = component$(({ beerTime, started = true, ...props }: CounterDownProps) => {
+export const CounterDown = component$(({ beerTime = 0, started = true, ...props }: CounterDownProps) => {
 
   const variant = selectedFlag(props, counterVariantFlagsOptions)
 
   const now = useSignal(new Date().getTime())
-  const beerTimed = beerTime ? useSignal(beerTime) : useSignal( now.value + 1000 * 60 * 60 * 24 * 7)
+
   
 
   const days = useSignal(0)
@@ -36,6 +36,7 @@ export const CounterDown = component$(({ beerTime, started = true, ...props }: C
   const interval = useSignal<any>()
 
   const distance = useSignal(0)
+
   useVisibleTask$(({ track }) => {
     track(() => days.value)
     track(() => hours.value)
@@ -43,12 +44,12 @@ export const CounterDown = component$(({ beerTime, started = true, ...props }: C
     track(() => seconds.value)
     track(() => now.value)
     track(() => started)
-    track(() => beerTimed.value)
+    track(() => beerTime)
 
     if (started) {
        interval.value = setInterval(() => {
         now.value = new Date().getTime()
-        distance.value = beerTimed.value - now.value
+        distance.value = beerTime - now.value
   
         days.value = Math.floor(distance.value / (1000 * 60 * 60 * 24))
         hours.value = Math.floor(

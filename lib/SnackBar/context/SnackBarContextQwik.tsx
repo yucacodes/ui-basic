@@ -19,7 +19,7 @@ export type SnackBarType = {
   colorLabelAction?: string
   showAction?: boolean
   labelAction?: string
-  customClickAction?: any //TODO: complete
+  customClickAction?: () => void
 }
 
 export interface State {
@@ -35,29 +35,21 @@ export const SnackBarProvider = component$(() => {
 
   useTask$(({ track, cleanup }) => {
     track(() => state.snackBars.value)
-    let timer = null
+
     const snackBarsWithoutAction = state.snackBars.value.filter(
       (sb) => !sb.showAction && !sb.showCloseButton,
     )
     if (snackBarsWithoutAction.length) {
       const currentSnackBars = snackBarsWithoutAction[0]
-      timer = setTimeout(() => {
+      const timer = setTimeout(() => {
         state.snackBars.value = state.snackBars.value.filter(
           (sb) => sb.id !== currentSnackBars.id,
         )
-      }, 5000)
-    } else {
-      //TODO: Remove else when `customClickAction` is completed
-      timer = setTimeout(() => {
-        state.snackBars.value = state.snackBars.value.filter(
-          (sb) => sb.id !== state.snackBars.value[0].id,
-        )
-      }, 10000)
+      }, 4000)
+      cleanup(() => {
+        clearTimeout(timer)
+      })
     }
-
-    cleanup(() => {
-      clearTimeout(timer)
-    })
   })
 
   useContextProvider(snackBarProvider, state)

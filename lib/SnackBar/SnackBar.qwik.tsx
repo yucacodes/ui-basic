@@ -1,7 +1,7 @@
 /** @jsxImportSource @builder.io/qwik */
 
 import { $, component$, useContext } from '@builder.io/qwik'
-import { snackBarProvider } from './context/SnackBarContextQwik'
+import { snackBarProvider, SnackBarType } from './context/SnackBarContextQwik'
 import styles from './SnackBar.module.css'
 
 export interface SnackBarQwikProps {
@@ -13,6 +13,17 @@ export const SnackBar = component$(({ position }: SnackBarQwikProps) => {
 
   const removeSnackBar = $((id: number) => {
     snackBars.value = snackBars.value.filter((sb) => sb.id !== id)
+  })
+
+  const handleClick = $((snackBar: SnackBarType) => {
+    if (snackBar.showCloseButton) {
+      removeSnackBar(snackBar.id)
+    } else if (snackBar.showAction && snackBar.customClickAction) {
+      snackBar.customClickAction()
+      setTimeout(() => {
+        removeSnackBar(snackBar.id)
+      }, 2000)
+    }
   })
 
   return (
@@ -47,11 +58,7 @@ export const SnackBar = component$(({ position }: SnackBarQwikProps) => {
                 snackBar.snackBarTheme === 'light' && styles.lightTextAction,
                 styles[snackBar.colorLabelAction ?? 'primary'],
               ]}
-              onClick$={
-                snackBar.showCloseButton
-                  ? $(() => removeSnackBar(snackBar.id))
-                  : undefined
-              }
+              onClick$={() => handleClick(snackBar)}
             >
               {snackBar.showCloseButton
                 ? 'CLOSE'

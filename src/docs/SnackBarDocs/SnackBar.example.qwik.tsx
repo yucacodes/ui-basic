@@ -1,6 +1,6 @@
 /** @jsxImportSource @builder.io/qwik */ // __EXCLUDE__
-import { Container, SnackBar } from '@yucacodes/ui-qwik'
-import { $, component$, useSignal, useTask$ } from '@builder.io/qwik'
+import { Container } from '@yucacodes/ui-qwik'
+import { $, component$ } from '@builder.io/qwik'
 import { useSnackBar } from '../../../lib/SnackBar/hooks/useSnackBarQuik'
 
 const ViewSnackBar = component$(() => {
@@ -31,6 +31,9 @@ const ViewSnackBar = component$(() => {
           showAction: true,
           labelAction: 'Click',
           colorLabelAction: 'warning',
+          customClickAction: $(() => {
+            alert('Hiciste click en la acción del SnackBar 👍🏻')
+          }),
         })
         break
     }

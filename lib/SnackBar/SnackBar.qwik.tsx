@@ -1,36 +1,54 @@
 /** @jsxImportSource @builder.io/qwik */
 
-import { PropFunction, component$ } from '@builder.io/qwik'
-import { CSnackBarProps } from './SnackBar.common'
+import { component$, useContext } from '@builder.io/qwik'
+import { snackBarProvider } from './context/SnackBarContextQwik'
 import styles from './SnackBar.module.css'
-import { selectedFlag } from '../Theme/selectedFlag'
-import { colorFlagsOptions } from '../Theme/ColorFlags'
-import { CSSProperties } from 'react'
-import { customColorVariables } from '../Theme/customColorVariables'
 
-export interface SnackBarQwikProps extends CSnackBarProps {
-  style?: CSSProperties
-  onClick$?: PropFunction<
-    (event: PointerEvent, element: HTMLParagraphElement) => any
-  >
+export interface SnackBarQwikProps {
+  position?: string
 }
 
-export const SnackBar = component$(
-  ({ color, message, textAction, ...props }: SnackBarQwikProps) => {
-    const themeColor = selectedFlag(props, colorFlagsOptions)
-    const colorVariables = customColorVariables('snackBar', color)
+export const SnackBar = component$(({ position }: SnackBarQwikProps) => {
+  const { snackBars } = useContext(snackBarProvider)
 
-    return (
-      <div class={[styles.snackBar]}>
-        <p class={[styles.textLabel]}>{message ?? 'Text Label'}</p>
-        <p
-          style={{ ...colorVariables, ...props.style }}
-          class={[styles.textAction, styles[themeColor ?? 'primary']]}
-          onClick$={props.onClick$}
+  return (
+    <div class={[styles.container, styles[position ?? 'bottom-right']]}>
+      {snackBars.value.map((snackBar) => (
+        <div
+          class={[
+            styles.snackBar,
+            styles[position ?? 'bottom-right'],
+            styles[
+              `${
+                snackBar.snackBarTheme ? snackBar.snackBarTheme : 'dark'
+              }ThemeBackground`
+            ],
+          ]}
         >
-          {textAction ?? 'ACTION'}
-        </p>
-      </div>
-    )
-  },
-)
+          <p
+            class={[
+              styles[
+                `${
+                  snackBar.snackBarTheme ? snackBar.snackBarTheme : 'dark'
+                }TextLabel`
+              ],
+            ]}
+          >
+            {snackBar.message ?? 'Text Label'}
+          </p>
+          {snackBar.showAction && (
+            <p
+              class={[
+                styles.textAction,
+                snackBar.snackBarTheme === 'light' && styles.lightTextAction,
+                styles[snackBar.colorLabelAction ?? 'primary'],
+              ]}
+            >
+              {snackBar.labelAction ?? 'ACTION'}
+            </p>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+})

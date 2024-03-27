@@ -19,8 +19,7 @@ const ViewSnackBar = component$(() => {
           id: snackBars.value.length + 1,
           message:
             'Este será un mensaje largo para probar como se comportaría el SnackBar',
-          showAction: true,
-          labelAction: 'Click',
+          showCloseButton: true,
           colorLabelAction: 'secondary',
         })
         break
@@ -30,7 +29,7 @@ const ViewSnackBar = component$(() => {
           message: 'Snack Bar warning',
           snackBarTheme: 'light',
           showAction: true,
-          labelAction: 'Close',
+          labelAction: 'Click',
           colorLabelAction: 'warning',
         })
         break

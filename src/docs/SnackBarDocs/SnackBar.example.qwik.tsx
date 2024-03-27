@@ -1,5 +1,5 @@
 /** @jsxImportSource @builder.io/qwik */ // __EXCLUDE__
-import { Container } from '@yucacodes/ui-qwik'
+import { Button, Container } from '@yucacodes/ui-qwik'
 import { $, component$ } from '@builder.io/qwik'
 import { useSnackBar } from '../../../lib/SnackBar/hooks/useSnackBarQuik'
 
@@ -11,29 +11,38 @@ const ViewSnackBar = component$(() => {
       case 'primary':
         addSnackBar({
           id: snackBars.value.length + 1,
-          message: 'Snack Bar primary',
+          message: '¡Aquí puedes escribir tu mensaje! Se cerrará en 4 seg.😊',
         })
         break
       case 'secondary':
         addSnackBar({
           id: snackBars.value.length + 1,
           message:
-            'Este será un mensaje largo para probar como se comportaría el SnackBar',
-          showCloseButton: true,
+            'Escribe tu mensaje aquí y ciérralo manualmente si lo deseas.👍🏻',
           colorLabelAction: 'secondary',
+          showCloseButton: true,
         })
         break
       case 'warning':
         addSnackBar({
           id: snackBars.value.length + 1,
-          message: 'Snack Bar warning',
-          snackBarTheme: 'light',
+          message: 'Escribe tu mensaje y personaliza el click.😮',
+          colorLabelAction: 'warning',
           showAction: true,
           labelAction: 'Click',
-          colorLabelAction: 'warning',
           customClickAction: $(() => {
             alert('Hiciste click en la acción del SnackBar 👍🏻')
           }),
+        })
+        break
+      case 'light':
+        addSnackBar({
+          id: snackBars.value.length + 1,
+          message:
+            'Puedes personalizar el tema claro en el SnackBar si lo deseas.😎',
+          snackBarTheme: 'light',
+          colorLabelAction: 'black',
+          showCloseButton: true,
         })
         break
     }
@@ -53,14 +62,22 @@ const ViewSnackBar = component$(() => {
       <div
         style={{
           display: 'flex',
+          flexDirection: 'column',
           gap: '1em',
         }}
       >
-        <button onClick$={() => handleAddSnackBar('primary')}>Primary</button>
-        <button onClick$={() => handleAddSnackBar('secondary')}>
-          Secondary
-        </button>
-        <button onClick$={() => handleAddSnackBar('warning')}>Warning</button>
+        <Button onClick$={() => handleAddSnackBar('primary')}>
+          SnackBar solo texto
+        </Button>
+        <Button secondary onClick$={() => handleAddSnackBar('secondary')}>
+          SnackBar con opción de cerrar
+        </Button>
+        <Button warning onClick$={() => handleAddSnackBar('warning')}>
+          Snackbar con acción de click personalizada
+        </Button>
+        <Button black onClick$={() => handleAddSnackBar('light')}>
+          Snackbar con tema claro
+        </Button>
       </div>
     </Container>
   )

@@ -1,0 +1,64 @@
+.snackBar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75em;
+  background: var(--color-black, #303030);
+  width: 90%;
+  border-radius: 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.textLabel {
+  color: white;
+}
+
+.textAction {
+  font-weight: bold;
+  color: var(--snackBar-color);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: text-shadow 0.3s ease;
+}
+
+.textAction:hover {
+  text-shadow: 0 0 0.5em var(--snackBar-color);
+}
+
+/* Colors */
+
+.primary {
+  --snackBar-color: var(--primary-color, #9e60f0);
+  --snackBar-color-rgb: var(--primary-color-rgb, 158, 96, 240);
+  --snackBar-color-contrast: var(--primary-color-contrast, #ffffff);
+}
+
+.secondary {
+  --snackBar-color: var(--secondary-color, #05c77d);
+  --snackBar-color-rgb: var(--secondary-color-rgb, 5, 199, 125);
+  --snackBar-color-contrast: var(--secondary-color-contrast, #ffffff);
+}
+
+.warning {
+  --snackBar-color: var(--warning-color, #f0b000);
+  --snackBar-color-rgb: var(--warning-color-rgb, 240, 176, 0);
+  --snackBar-color-contrast: var(--warning-color-contrast, #ffffff);
+}
+
+.danger {
+  --snackBar-color: var(--danger-color, #f01010);
+  --snackBar-color-rgb: var(--danger-color-rgb, 240, 16, 16);
+  --snackBar-color-contrast: var(--danger-color-contrast, #ffffff);
+}
+
+.black {
+  --snackBar-color: var(--color-black, #303030);
+  --snackBar-color-rgb: var(--color-black-rgb, 48, 48, 48);
+  --snackBar-color-contrast: var(--color-black-contrast, #ffffff);
+}
+
+.white {
+  --snackBar-color: var(--color-white, #ffffff);
+  --snackBar-color-rgb: var(--color-white-rgb, 255, 255, 255);
+  --snackBar-color-contrast: var(--color-white-contrast, #303030);
+}

@@ -1,0 +1,136 @@
+.container {
+  position: fixed;
+  z-index: 20;
+}
+
+.snackBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75em;
+  width: 20em;
+  gap: 3em;
+  margin: 1em;
+  border-radius: 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.darkThemeBackground {
+  background-color: #303030;
+}
+
+.lightThemeBackground {
+  background-color: white;
+}
+
+.darkTextLabel {
+  color: white;
+}
+
+.lightTextLabel {
+  color: #303030;
+}
+
+.textAction {
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: text-shadow 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.textAction:hover {
+  text-shadow: 0 0 0.5em #ffffff;
+}
+
+.lightTextAction:hover {
+  text-shadow: 0 0 0.5em #474747c2;
+}
+
+/* Colors */
+.primary {
+  color: #9e60f0;
+}
+
+.secondary {
+  color: #05c77d;
+}
+
+.warning {
+  color: #f0b000;
+}
+
+.danger {
+  color: #f01010;
+}
+
+.white {
+  color: #ffffff;
+}
+
+.black {
+  color: #303030;
+}
+
+/* Positions */
+
+.bottom-right {
+  bottom: 1em;
+  right: 1em;
+  animation: move-bottom-right 0.7s;
+}
+
+.bottom-left {
+  bottom: 1em;
+  left: 1em;
+  animation: move-bottom-left 0.7s;
+}
+
+.top-right {
+  top: 1em;
+  right: 1em;
+  animation: move-top-right 0.7s;
+}
+
+.top-left {
+  top: 1em;
+  left: 1em;
+  animation: move-top-left 0.7s;
+}
+
+@keyframes move-bottom-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes move-bottom-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes move-top-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes move-top-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

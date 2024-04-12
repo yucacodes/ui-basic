@@ -12,7 +12,7 @@ import {
 import { SnackBar } from '../SnackBar.qwik'
 
 export type SnackBarType = {
-  id: number
+  id?: number
   message: string
   snackBarTheme?: string
   showCloseButton?: boolean

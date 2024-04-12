@@ -9,7 +9,11 @@ const useSnackBar = () => {
   const { snackBars } = useContext(snackBarProvider)
 
   const addSnackBar = $((snackBar: SnackBarType) => {
-    snackBars.value = [...snackBars.value, snackBar]
+    const newSnackBar = {
+      ...snackBar,
+      id: (snackBars.value.slice(-1)[0]?.id ?? 0) + 1,
+    }
+    snackBars.value = [...snackBars.value, newSnackBar]
   })
 
   return {

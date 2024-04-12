@@ -5,7 +5,6 @@ import {
   ServiceWorkerRegister,
 } from '@builder.io/qwik-city'
 import { RouterHead } from './components/router-head/router-head'
-import { SnackBarProvider } from '../lib/SnackBar/context/SnackBarContextQwik'
 
 import './global.css'
 import './theme.css'
@@ -27,9 +26,7 @@ export default component$(() => {
         <ServiceWorkerRegister />
       </head>
       <body lang="en">
-        <SnackBarProvider>
-          <RouterOutlet />
-        </SnackBarProvider>
+        <RouterOutlet />
       </body>
     </QwikCityProvider>
   )

@@ -73,62 +73,17 @@
   color: #303030;
 }
 
-/* Positions */
+/* Position */
 
-.bottom-right {
+.bottomRight {
   bottom: 1em;
   right: 1em;
   animation: move-bottom-right 0.7s;
 }
 
-.bottom-left {
-  bottom: 1em;
-  left: 1em;
-  animation: move-bottom-left 0.7s;
-}
-
-.top-right {
-  top: 1em;
-  right: 1em;
-  animation: move-top-right 0.7s;
-}
-
-.top-left {
-  top: 1em;
-  left: 1em;
-  animation: move-top-left 0.7s;
-}
-
 @keyframes move-bottom-right {
   from {
     transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes move-bottom-left {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes move-top-right {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes move-top-left {
-  from {
-    transform: translateX(-100%);
   }
   to {
     transform: translateX(0);

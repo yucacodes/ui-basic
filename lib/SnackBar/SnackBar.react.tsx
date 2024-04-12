@@ -1,42 +1,28 @@
 /** @jsxImportSource react */
-
-import { CSSProperties, MouseEventHandler } from 'react'
-import { CSnackBarProps } from './SnackBar.common'
-import { selectedFlag } from '../Theme/selectedFlag'
-import { colorFlagsOptions } from '../Theme/ColorFlags'
-import { customColorVariables } from '../Theme/customColorVariables'
-import styles from './SnackBar.module.css'
 import classNames from 'classnames'
+import styles from './SnackBar.module.css'
 
-export interface SnackBarReactProps extends CSnackBarProps {
-  style?: CSSProperties
-  onClick?: MouseEventHandler<HTMLParagraphElement>
-}
-
-export function SnackBar({
-  color,
-  message,
-  textAction,
-  ...props
-}: SnackBarReactProps) {
-  const themeColor = selectedFlag(props, colorFlagsOptions)
-  const colorVariables = customColorVariables('snackBar', color)
-
+export function SnackBar() {
   return (
-    <div className={classNames([styles.snackBar])}>
-      <p className={classNames([styles.textLabel])}>
-        {message ?? 'Text Label'}
-      </p>
-      <p
-        style={{ ...colorVariables, ...props.style }}
+    <div className={classNames([styles.container, styles.bottomRight])}>
+      <div
         className={classNames([
-          styles.textAction,
-          styles[themeColor ?? 'primary'],
+          styles.snackBar,
+          styles.bottomRight,
+          styles.darkThemeBackground,
         ])}
-        onClick={props.onClick}
       >
-        {textAction ?? 'ACTION'}
-      </p>
+        <p className={styles.darkTextLabel}>Message</p>
+        <p
+          className={classNames([
+            styles.textAction,
+            styles.lightTextAction,
+            styles.primary,
+          ])}
+        >
+          ACTION
+        </p>
+      </div>
     </div>
   )
 }

@@ -4,14 +4,10 @@ import { $, component$, useContext } from '@builder.io/qwik'
 import { snackBarProvider, SnackBarType } from './context/SnackBarContextQwik'
 import styles from './SnackBar.module.css'
 
-export interface SnackBarQwikProps {
-  position?: string
-}
-
-export const SnackBar = component$(({ position }: SnackBarQwikProps) => {
+export const SnackBar = component$(() => {
   const { snackBars } = useContext(snackBarProvider)
 
-  const removeSnackBar = $((id: number) => {
+  const removeSnackBar = $((id?: number) => {
     snackBars.value = snackBars.value.filter((sb) => sb.id !== id)
   })
 
@@ -27,12 +23,12 @@ export const SnackBar = component$(({ position }: SnackBarQwikProps) => {
   })
 
   return (
-    <div class={[styles.container, styles[position ?? 'bottom-right']]}>
+    <div class={[styles.container, styles.bottomRight]}>
       {snackBars.value.map((snackBar) => (
         <div
           class={[
             styles.snackBar,
-            styles[position ?? 'bottom-right'],
+            styles.bottomRight,
             styles[
               `${
                 snackBar.snackBarTheme ? snackBar.snackBarTheme : 'dark'

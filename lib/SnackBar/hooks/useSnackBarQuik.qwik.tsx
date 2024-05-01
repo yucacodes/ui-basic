@@ -2,7 +2,7 @@ import { $, useContext } from '@builder.io/qwik'
 import {
   type SnackBarType,
   snackBarProvider,
-} from '../context/SnackBarContextQwik'
+} from '../context/SnackBarContextQwik.qwik'
 import {} from '../SnackBar.qwik'
 
 const useSnackBar = () => {

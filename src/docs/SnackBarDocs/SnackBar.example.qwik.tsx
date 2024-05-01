@@ -1,8 +1,8 @@
 /** @jsxImportSource @builder.io/qwik */ // __EXCLUDE__
 import { Button, Container } from '@yucacodes/ui-qwik'
 import { $, component$ } from '@builder.io/qwik'
-import { useSnackBar } from '../../../lib/SnackBar/hooks/useSnackBarQuik'
-import { SnackBarProvider } from '../../../lib/SnackBar/context/SnackBarContextQwik'
+import { useSnackBar } from '../../../lib/SnackBar/hooks/useSnackBarQuik.qwik'
+import { SnackBarProvider } from '../../../lib/SnackBar/context/SnackBarContextQwik.qwik'
 
 const ViewSnackBar = component$(() => {
   const { snackBars, addSnackBar } = useSnackBar()

@@ -1,7 +1,10 @@
 /** @jsxImportSource @builder.io/qwik */
 
 import { $, component$, useContext } from '@builder.io/qwik'
-import { snackBarProvider, SnackBarType } from './context/SnackBarContextQwik'
+import {
+  snackBarProvider,
+  SnackBarType,
+} from './context/SnackBarContextQwik.qwik'
 import styles from './SnackBar.module.css'
 
 export const SnackBar = component$(() => {

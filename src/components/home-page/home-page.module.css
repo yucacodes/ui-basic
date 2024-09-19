@@ -1,0 +1,17 @@
+:root {
+    --color-primary: #fff;
+    --color-secondary: #fff;
+}
+
+
+.homePage {}
+
+.hero {
+    background: url('../../assets/bg-home.svg') no-repeat center center/cover;
+    height: 900px;
+    width: 100%;
+
+    h1 {
+        color: var(--color-primary);
+    }
+}

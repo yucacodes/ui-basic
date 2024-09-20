@@ -59,7 +59,7 @@ export const SidePanelLayout = component$((props: SidePanelLayoutProps) => {
       !(event.target as HTMLElement)?.matches(
         `#${toogleElementId}, #${toogleElementId} *`,
       ) &&  !(event.target as HTMLElement)?.matches(
-        `details > summary *`,
+        `details > * ,details > summary *`,
 
       )
     ) {

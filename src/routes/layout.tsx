@@ -14,11 +14,12 @@ import {
 import '@fontsource/ibm-plex-sans/latin-400.css'
 import '@fontsource/lato/latin-400.css'
 import style from './layout.module.css'
+import Logo from '../assets/ui-logo.svg?jsx'
 
 export default component$(() => {
   return (
     <SidePanelLayout left>
-      <SideNav q:slot="panel">
+      <SideNav q:slot="panel" class={style.sideNav}>
         <NavLink href="/">Yui</NavLink>
         <SideNavSection class={style.sideNavSection} collapsed>
           <span q:slot="title">Componentes</span>
@@ -39,9 +40,10 @@ export default component$(() => {
       </SideNav>
       <HeaderLayout hideHeaderOnPc>
         <header
+          class={style.header}
           q:slot="header"
           style={{
-            padding: '0.2rem',
+            padding: '1rem',
             display: 'flex',
             alignItems: 'center',
             height: '100%',
@@ -49,11 +51,18 @@ export default component$(() => {
         >
           <ToogleSidePanel>
             <Button black text>
-              <LuMenu font-size="2.1rem" />
+              <LuMenu class={style.icon} font-size="2.1rem" />
             </Button>
           </ToogleSidePanel>
+          <div class={style.headerContent}>
+            <Logo class={style.title} />
+
+            <Button>
+              Docs
+            </Button>
+          </div>
         </header>
-        <CenterContentLayout>
+        <CenterContentLayout class={style.centerContentLayout}>
           <Slot />
         </CenterContentLayout>
       </HeaderLayout>

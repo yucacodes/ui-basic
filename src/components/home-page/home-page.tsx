@@ -4,7 +4,7 @@ export default component$(() => {
     return (
       <main class={styles.homePage}>
         <section class={styles.hero}>
-           <h1 class="text-4xl font-bold">Home Page</h1>
+           <h1 class={styles.title}>Home Page</h1>
         </section>
       </main> 
     )

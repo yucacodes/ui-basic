@@ -10,8 +10,10 @@
     background: url('../../assets/bg-home.svg') no-repeat center center/cover;
     height: 900px;
     width: 100%;
+    border-radius: 0 0 3rem 0;
 
-    h1 {
+    .title {
         color: var(--color-primary);
+        margin: 0;
     }
 }

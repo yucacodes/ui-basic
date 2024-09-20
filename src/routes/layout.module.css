@@ -1,4 +1,30 @@
+.header {
+  --side-panel-bg-color:#2F364B;
+
+  background-color: var(--side-panel-bg-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.headerContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .sideNavSection {
-    --sumary-bg-color-contrast:  #f7f9ff;
-    --sumary-bg-color:  #ffffff;
-  }
+  --sumary-bg-color-contrast: #f7f9ff;
+  --sumary-bg-color: #2F364B;
+
+}
+
+.icon {
+  color: #fff;
+}
+
+.centerContentLayout {
+ 
+}

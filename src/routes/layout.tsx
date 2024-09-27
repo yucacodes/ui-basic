@@ -51,20 +51,19 @@ export default component$(() => {
         >
           <ToogleSidePanel>
             <Button black text>
-              <LuMenu class={style.icon} font-size="2.1rem" />
+              <LuMenu class={style.icon} font-size="2rem" />
             </Button>
           </ToogleSidePanel>
           <div class={style.headerContent}>
-            <Logo class={style.title} />
+            <Logo class={style.logo} />
 
-            <Button>
-              Docs
+            <Button white class={style.buttonNpm}>
+              npm
             </Button>
           </div>
         </header>
-        <CenterContentLayout class={style.centerContentLayout}>
+    
           <Slot />
-        </CenterContentLayout>
       </HeaderLayout>
     </SidePanelLayout>
   )

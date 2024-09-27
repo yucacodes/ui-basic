@@ -8,6 +8,10 @@
   gap: 1rem;
 }
 
+.logo {
+  width: 5rem;
+}
+
 .headerContent {
   flex: 1;
   display: flex;
@@ -25,6 +29,6 @@
   color: #fff;
 }
 
-.centerContentLayout {
- 
+.buttonNpm {
+ --button-radius: 2rem;
 }

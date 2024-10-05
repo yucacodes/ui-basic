@@ -1,12 +1,15 @@
 :root {
     --color-primary: #fff;
     --color-secondary: #fff;
+    --color-accent: #00BAC7;
+
+    --text-color: rgba(39, 45, 62, 0.8);
 }
 
 
 .heroBg {
     width: 100%;
-    height: 600px;
+    height: 700px;
     background: linear-gradient(0deg, #2F364B 0%, #262B3D 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
     z-index: -1;
@@ -24,7 +27,7 @@
     gap: 2rem;
     z-index: 0;
     padding: 4rem;
-
+    max-height: 650px;
 
     .sectionText {
         display: flex;
@@ -33,7 +36,7 @@
     }
 
     .heroContent {
-        
+
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -81,22 +84,111 @@
     }
 }
 
+.features {
+    margin: 0 auto;
+    max-width: 80%;
+    width: 100%;
+    padding-block: 4rem;
+
+
+    .containerTitles {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 6rem;
+
+        .titles {
+            width: 50%;
+
+            span {
+                padding-left: 3.5rem;
+                position: relative;
+                color: var(--color-accent);
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    translate: 50% 50%;
+                    width: 30px;
+                    height: 2px;
+                    background: var(--color-accent);
+                }
+            }
+
+            h5 {
+                margin: 0;
+                font-size: 32px;
+                font-weight: 700;
+
+
+            }
+        }
+
+        p {
+            margin: 0;
+            width: 50%;
+            font-size: 18px;
+            line-height: 32PX;
+            font-weight: 4700;
+            color: var(--text-color);
+        }
+    }
+
+    .gridFeatures {
+        padding-block: 5rem;
+        display: flex;
+        gap: 30px;
+
+        .grid{
+            gap: 1rem;
+            width: 33%;
+            text-align: center;
+            
+            img{
+                width: 200px;
+                height: auto;
+            }
+
+            h4{
+                font-weight: 700;
+            }
+            p{
+                font-size: 16px;
+                line-height: 32px;
+                color: var(--text-color);
+            }
+        }
+    }
+
+
+
+
+
+}
+
+
 @media (max-width: 768px) {
     .heroBg {
-      
-        height: 1000px;
-        padding:1rem;
+
+        height: 800px;
+        padding: 1rem;
         clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 90%);
     }
+
     .containerHero {
         flex-direction: column;
+        justify-content: flex-start
     }
+
     .heroContent {
         flex-direction: column;
     }
+
     .heroImage {
-       width: 100%;
-       height: 100%;
+        width: 100%;
+        height: 100%;
     }
 }
-

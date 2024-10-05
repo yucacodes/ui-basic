@@ -4,6 +4,7 @@ import { Button, Container } from "@yucacodes/ui-qwik"
 import { LuArrowRightCircle, LuDownload } from "@qwikest/icons/lucide"
 
 import ImagenHero from '../../assets/imagen_hero.png'
+import CssFrist from '../../assets/css_frist.png';
 
 export default component$(() => {
   return (
@@ -40,6 +41,63 @@ export default component$(() => {
           />
         </section>
       </div>
+
+      <section class={styles.features}>
+
+        <div class={styles.containerTitles}>
+
+          <div class={styles.titles}>
+            <span>Jorge Narvaez</span>
+            <h5>
+
+              Buku yang cocok dibaca untuk front-end dan back-end, bahkan UI designer!
+            </h5>
+          </div>
+
+          <p >
+            Buku ini bukan hanya untuk front-end developer yang ingin meningkatkan skill, buku ini juga cocok untuk back-end developer dan UI designer agar dapat menulis style tanpa harus menulis kode CSS dan tanpa mengandalkan front-end developer!
+
+          </p>
+
+        </div>
+
+        <div class={styles.gridFeatures}>
+          <div class={styles.grid}>
+            <img
+              src={CssFrist}
+              alt="Imagen Hero"
+              width={300}
+              height={300}
+            />
+
+            <h4>Css varaibles frist</h4>
+            <p>JIT engine akan men-generate utility-class yang kita gunakan saja. Ini akan membuat pengalaman pengembangan semakin baik.</p>
+          </div>
+          <div class={styles.grid}>
+            <img
+              src={CssFrist}
+              alt="Imagen Hero"
+              width={300}
+              height={300}
+            />
+
+            <h4>Css varaibles frist</h4>
+            <p>JIT engine akan men-generate utility-class yang kita gunakan saja. Ini akan membuat pengalaman pengembangan semakin baik.</p>
+          </div>
+          <div class={styles.grid}>
+            <img
+              src={CssFrist}
+              alt="Imagen grid"
+              width={300}
+              height={300}
+            />
+
+            <h4>Css varaibles frist</h4>
+            <p>JIT engine akan men-generate utility-class yang kita gunakan saja. Ini akan membuat pengalaman pengembangan semakin baik.</p>
+          </div>
+        </div>
+
+      </section>
     </Container>
   )
 })

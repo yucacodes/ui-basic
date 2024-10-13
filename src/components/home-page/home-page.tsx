@@ -1,6 +1,6 @@
 import { $, component$, useSignal } from '@builder.io/qwik'
 import styles from './home-page.module.css'
-import { Button, Container } from '@yucacodes/ui-qwik'
+import { Button, Container, SubTitle, TextField } from '@yucacodes/ui-qwik'
 import {
   LuArrowRightCircle,
   LuDownload,
@@ -137,7 +137,22 @@ export default component$(() => {
               step.value === 0 ? styles.show : '',
             ]}
           >
-            formualrios
+            <h3> Formualrios </h3>
+
+            <div class={styles.displayExamplesRight__content__form}>
+               <SubTitle size={16} weight={600}> Account info </SubTitle>
+
+              <div class={styles.displayExamplesRight__content__form__fields}>
+                <TextField type="text"  label="Display Name" placeholder="Display Name" />
+                <TextField type="text" label="Real Name" placeholder="Real Name" />
+              </div>
+
+              
+              <div class={styles.displayExamplesRight__content__form__fields}>
+                <TextField type="phone"  label="Phone" placeholder="Phone" />
+                <TextField type="email"  label="Email" placeholder="Email" />
+              </div>
+            </div>
           </article>
           <article
             class={[

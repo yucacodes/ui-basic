@@ -1,0 +1,35 @@
+/* Contenedor principal del input */
+.container {
+    margin-bottom: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  /* Estilos para la etiqueta del campo de texto */
+  .label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #b0b0c3; /* Color gris suave para el texto de la etiqueta */
+    margin-bottom: 4px;
+  }
+  
+  /* Estilos para el input */
+  .input {
+    box-sizing: border-box;
+    width: 100%; /* Toma todo el ancho del contenedor */
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 8px; /* Bordes redondeados */
+    border: 1px solid #e0e0e0; /* Borde gris claro */
+    outline: none;
+    color: #333; /* Color del texto */
+    background-color: #f9f9f9; /* Fondo blanco suave */
+    transition: border-color 0.2s ease-in-out;
+  }
+  
+  .input:focus {
+    border-color: #a0a0ff; /* Cambiar el borde al hacer focus */
+  }
+  

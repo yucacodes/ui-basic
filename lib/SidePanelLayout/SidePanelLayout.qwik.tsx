@@ -33,6 +33,7 @@ export const sidePanelLayoutContext =
 
 export interface SidePanelLayoutProps extends CSidePanelLayoutProps {
   class?: ClassList
+  sidePanel? : ClassList
 }
 
 export const SidePanelLayout = component$((props: SidePanelLayoutProps) => {
@@ -80,6 +81,7 @@ export const SidePanelLayout = component$((props: SidePanelLayoutProps) => {
       onClick$={handleRootClick}
     >
       <SidePanel
+        class={props.sidePanel}
         staticOnPc
         open={contextState.openPanel}
         left={props.left}

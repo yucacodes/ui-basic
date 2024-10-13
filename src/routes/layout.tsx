@@ -18,7 +18,7 @@ import Logo from '../assets/ui-logo.svg?jsx'
 
 export default component$(() => {
   return (
-    <SidePanelLayout left>
+    <SidePanelLayout  sidePanel={style.sidePanel} left>
       <SideNav q:slot="panel" class={style.sideNav}>
         <NavLink href="/">Yui</NavLink>
         <SideNavSection class={style.sideNavSection} collapsed>

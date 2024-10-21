@@ -11,6 +11,8 @@ import {
 
 import ImagenHero from '../../assets/imagen_hero.png'
 import CssFrist from '../../assets/css_frist.png'
+import Logo from '../../assets/ui-logo.svg?jsx'
+
 
 export default component$(() => {
   const step = useSignal(0)
@@ -121,13 +123,13 @@ export default component$(() => {
               <LuPointer />
               Botones
             </li>
-            <li
+            {/*  <li
               onClick$={() => toggle(2)}
               class={[step.value === 2 ? styles.active : '']}
             >
               <LuRectangleHorizontal />
               Cards
-            </li>
+            </li> */}
           </ul>
         </div>
         <div class={styles.displayExamplesRight}>
@@ -140,17 +142,27 @@ export default component$(() => {
             <h3> Formualrios </h3>
 
             <div class={styles.displayExamplesRight__content__form}>
-               <SubTitle size={16} weight={600}> Account info </SubTitle>
+              <SubTitle size={16} weight={600}>
+                {' '}
+                Account info{' '}
+              </SubTitle>
 
               <div class={styles.displayExamplesRight__content__form__fields}>
-                <TextField type="text"  label="Display Name" placeholder="Display Name" />
-                <TextField type="text" label="Real Name" placeholder="Real Name" />
+                <TextField
+                  type="text"
+                  label="Display Name"
+                  placeholder="Display Name"
+                />
+                <TextField
+                  type="text"
+                  label="Real Name"
+                  placeholder="Real Name"
+                />
               </div>
 
-              
               <div class={styles.displayExamplesRight__content__form__fields}>
-                <TextField type="phone"  label="Phone" placeholder="Phone" />
-                <TextField type="email"  label="Email" placeholder="Email" />
+                <TextField type="phone" label="Phone" placeholder="Phone" />
+                <TextField type="email" label="Email" placeholder="Email" />
               </div>
             </div>
           </article>
@@ -160,7 +172,17 @@ export default component$(() => {
               step.value === 1 ? styles.show : '',
             ]}
           >
-            Botones
+            <h3> Botones </h3>
+            <SubTitle size={16} weight={600} style={{ marginBottom: '1rem' }}>
+                 Contained
+              </SubTitle>
+            <div class={styles.displayExamplesRight__content__buttons}>
+            
+
+              <Button contained>Contained</Button>
+              <Button disabled>Contained</Button>
+              <Button loading>Contained</Button>
+            </div>
           </article>
 
           <article
@@ -173,6 +195,25 @@ export default component$(() => {
           </article>
         </div>
       </section>
+
+      <footer class={styles.footer}>
+        <Container style={{ margin: "0 auto", maxWidth: "80%", padding: "4rem" }}>
+           <section class={styles.footerSection}>
+            <div class={styles.footerContent}>
+            <Logo class={styles.logo} />
+              <p>
+              Open Source, un proyecto de <span>Yuca Fundation</span>
+              </p>
+            </div>
+
+            <div class={styles.footerHelp}>
+               <h6>Donaciones</h6>
+                <a href="">Coffe Me!</a>
+                <a href="">Paypal</a>
+            </div>
+           </section>
+        </Container>
+      </footer>
     </Container>
   )
 })

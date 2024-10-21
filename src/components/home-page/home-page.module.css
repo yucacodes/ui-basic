@@ -222,6 +222,71 @@
         
       }
     }
+
+    .displayExamplesRight__content__buttons {
+      height: 170px;
+      display: flex;
+      gap: 1rem;
+
+      button {
+        width: 100%;
+        height: 40px;
+      }
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  background-color: #272D3E;
+
+  .logo {
+    height: 32px;
+  }
+
+  .footerSection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-top: SOLID 1px rgba(255, 255, 255, 0.125);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.125);;
+  }
+
+  .footerContent{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    
+    p{
+      color: #fff;
+      margin: 0;
+      font-size: 12px;
+      line-height: 32px;
+    }
+
+    span{
+      font-weight: 800;
+    }
+  }
+
+  .footerHelp{
+    display: grid;
+    gap: 0.25rem;
+
+    h6{
+      color: #fff;
+      margin: 0;
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      font-weight: 700;
+    }
+
+    a{
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+    }
   }
 }
 

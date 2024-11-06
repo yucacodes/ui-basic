@@ -20,7 +20,20 @@
 
 }
 
+.link{
+  --primary-color: #272d3e;
+  background-color: var(--primary-color) !important;
+  color: #fff;
+}
+.link:active, .link:hover{
+  color: #fff7d6;
+}
+.link::selection{
+  color: #fff7d6;
+}
+
 .sideNav {
+
 
 }
 
@@ -28,6 +41,11 @@
   --sumary-bg-color-contrast: #f7f9ff;
   --btn-border-radius: 0.55em;
 
+  --accordion-bg-color:  #272d3e;
+  summary{
+    background-color: #272d3e !important;
+    color: #fff !important;
+  }
 
 }
 

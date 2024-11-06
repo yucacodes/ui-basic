@@ -5,7 +5,6 @@ import {
   LuArrowRightCircle,
   LuDownload,
   LuUser,
-  LuRectangleHorizontal,
   LuPointer,
 } from '@qwikest/icons/lucide'
 

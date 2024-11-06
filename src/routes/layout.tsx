@@ -20,7 +20,7 @@ export default component$(() => {
   return (
     <SidePanelLayout  sidePanel={style.sidePanel} left>
       <SideNav q:slot="panel" class={style.sideNav}>
-        <NavLink href="/">Yui</NavLink>
+        <NavLink class={style.link}  href="/">Yui</NavLink>
         <SideNavSection class={style.sideNavSection} collapsed>
           <span q:slot="title">Componentes</span>
           <NavLink href="/accordion/">Accordion</NavLink>

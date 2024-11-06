@@ -3,7 +3,7 @@
   height: 100%;
   width: var(--side-panel-width, 20rem);
   min-width: var(--side-panel-min-width, 0);
-  max-width: var(--side-panel-max-width, 26rem);
+  max-width: var(--side-panel-max-width, 20rem);
   position: absolute !important;
   transition: left 0.5s ease,right 0.5s ease;
   background-color: var(--side-panel-bg-color, var(--paper-color, #ffffff));

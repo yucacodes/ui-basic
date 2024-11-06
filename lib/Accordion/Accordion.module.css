@@ -1,8 +1,6 @@
 .accordion {
   position: relative;
   overflow: hidden;
-  box-sizing: border-box;
-	min-width: 300px;
 	margin-left: auto;
 	margin-right: auto;
   background-color: var(--accordion-bg-color);
@@ -11,6 +9,10 @@
 
 .shadow{
   box-shadow: 0em 0.1em 0.3em 0em var(--shadow-color, rgba(0, 0, 0, 0.4));
+}
+
+details{
+  width: 100%;
 }
 
 details[open] summary {
@@ -43,7 +45,7 @@ summary {
   align-items: center;
   justify-content: space-between;
   gap: 0.5em;
-
+  
 
 
 
